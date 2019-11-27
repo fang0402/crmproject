@@ -1,0 +1,23 @@
+##tomcat端口及虚拟路径的配置
+server:
+  port: 8080
+  servlet:
+    context-path: /crmproject
+
+#静态资源
+spring:
+  resources:
+    static-locations: classpath:/static/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/act1?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 159258
+  activiti:
+    check-process-definitions: true
+    database-schema-update: true
+    process-definition-location-prefix: classpath:/process/
+    history-level: full
+mybatis:
+  mapper-locations: /mapper/**.xml
+  type-aliases-package: com.csdj.crmproject.crmproject.entity
