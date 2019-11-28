@@ -13,7 +13,7 @@ package com.csdj.crmproject.crmproject.entity;
  */
 public class Com {
     /**
-     * 投诉编号
+     * 投诉编号   111111112111111
      */
     private Integer pkComId;
     /**
