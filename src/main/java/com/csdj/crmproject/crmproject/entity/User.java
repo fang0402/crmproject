@@ -1,113 +1,107 @@
-/*
- * 文 件 名：用户实体类
- * 版权(c) 雷升公司 CRM项目组：
- * 版 本 号：1.0
- */
-package com.csdj.crmproject.crmproject.entity;
+package com.sample;
 
-/**
- * @author 李文霞
- * @version 1.0
- * @date 2019-11-27
- */
+
 public class User {
-  /**
-   * Description ：  无参构造函数
-   * @param：  无
-   */
-  public User() {
+
+  private long pkUserId;
+  private String userName;
+  private String userPassword;
+  private long fkDepartmentId;
+  private String userIdentity;
+  private java.sql.Timestamp userGmtCreate;
+  private java.sql.Timestamp userGmtModified;
+  private String sc;
+  private String sd;
+  private String se;
+
+
+  public long getPkUserId() {
+    return pkUserId;
   }
 
-  /**
-   * Description ：  有参构造函数
-   * @param userId
-   * @param username
-   * @param userpassword
-   * @param departmentId
-   * @param identity
-   */
-  public User(long userId, String username, String userpassword, long departmentId, String identity) {
-    this.userId = userId;
-    this.username = username;
-    this.userpassword = userpassword;
-    this.departmentId = departmentId;
-    this.identity = identity;
-  }
-
-  /**
-   * 用户id
-   */
-  private long userId;
-  /**
-   * 用户名
-   */
-  private String username;
-  /**
-   * 密码
-   */
-  private String userpassword;
-  /**
-   * 部门id
-   */
-  private long departmentId;
-  /**
-   * 身份
-   */
-  private String identity;
-
-
-  public long getUserId() {
-    return userId;
-  }
-
-  public void setUserId(long userId) {
-    this.userId = userId;
-  }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
+  public void setPkUserId(long pkUserId) {
+    this.pkUserId = pkUserId;
   }
 
 
-  public String getUserpassword() {
-    return userpassword;
+  public String getUserName() {
+    return userName;
   }
 
-  public void setUserpassword(String userpassword) {
-    this.userpassword = userpassword;
+  public void setUserName(String userName) {
+    this.userName = userName;
   }
 
-  public long getDepartmentId() {
-    return departmentId;
+
+  public String getUserPassword() {
+    return userPassword;
   }
 
-  public void setDepartmentId(long departmentId) {
-    this.departmentId = departmentId;
+  public void setUserPassword(String userPassword) {
+    this.userPassword = userPassword;
   }
 
-  public String getIdentity() {
-    return identity;
+
+  public long getFkDepartmentId() {
+    return fkDepartmentId;
   }
 
-  public void setIdentity(String identity) {
-    this.identity = identity;
+  public void setFkDepartmentId(long fkDepartmentId) {
+    this.fkDepartmentId = fkDepartmentId;
   }
-  /**
-   * 显示数据
-   * @return 显示数据
-   */
-  @Override
-  public String toString() {
-    return "User{" +
-            "userId=" + userId +
-            ", username='" + username + '\'' +
-            ", userpassword='" + userpassword + '\'' +
-            ", departmentId=" + departmentId +
-            ", identity='" + identity + '\'' +
-            '}';
+
+
+  public String getUserIdentity() {
+    return userIdentity;
   }
+
+  public void setUserIdentity(String userIdentity) {
+    this.userIdentity = userIdentity;
+  }
+
+
+  public java.sql.Timestamp getUserGmtCreate() {
+    return userGmtCreate;
+  }
+
+  public void setUserGmtCreate(java.sql.Timestamp userGmtCreate) {
+    this.userGmtCreate = userGmtCreate;
+  }
+
+
+  public java.sql.Timestamp getUserGmtModified() {
+    return userGmtModified;
+  }
+
+  public void setUserGmtModified(java.sql.Timestamp userGmtModified) {
+    this.userGmtModified = userGmtModified;
+  }
+
+
+  public String getSc() {
+    return sc;
+  }
+
+  public void setSc(String sc) {
+    this.sc = sc;
+  }
+
+
+  public String getSd() {
+    return sd;
+  }
+
+  public void setSd(String sd) {
+    this.sd = sd;
+  }
+
+
+  public String getSe() {
+    return se;
+  }
+
+  public void setSe(String se) {
+    this.se = se;
+  }
+
 }
