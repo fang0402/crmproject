@@ -5,29 +5,147 @@
  */
 package com.csdj.crmproject.crmproject.entity;
 
-
+/**
+ * @author 尹嘉丽
+ * @version 1.0
+ * @date 2019-11-28
+ * 合同明细表
+ */
 public class ContractDetail {
-
+  /**
+   * 合同明细表编号
+   */
   private long pkContractDetailId;
+  /**
+   * 客户联系人表编号
+   */
   private long fkContractId;
+  /**
+   * 产品名称
+   */
   private String contractDetailName;
-  private String contractAccessoryModeltype;
-  private String contractAccessoryMeasurement;
-  private long contractAccessoryNumber;
-  private double contractAccessoryUnivalence;
-  private double contractAccessoryPrice;
-  private double contractAccessoryTotalsum;
-  private double contractAccessoryDiscount;
-  private double contractAccessoryGrossProfit;
-  private double contractAccessoryRate;
-  private double contractAccessoryRevenue;
-  private double contractAccessorySaleroom;
-  private java.sql.Timestamp gmtCreate;
-  private java.sql.Timestamp gmtModified;
-  private String sa;
-  private String sb;
-  private String sc;
+  /**
+   * 规格型号
+   */
+  private String contractDetailModelType;
+  /**
+   * 计量单位
+   */
+  private String contractDetailMeasurement;
+  /**
+   * 数量
+   */
+  private long contractDetailNumber;
+  /**
+   * 基本单价
+   */
+  private double contractDetailUnivalence;
+  /**
+   * 销售单价
+   */
+  private double contractDetailPrice;
+  /**
+   * 折前总额
+   */
+  private double contractDetailTotalSum;
+  /**
+   * 实际折扣
+   */
+  private double contractDetailDiscount;
+  /**
+   * 毛利润
+   */
+  private double contractDetailGrossProfit;
+  /**
+   * 税率
+   */
+  private double contractDetailRate;
+  /**
+   * 税额
+   */
+  private double contractDetailRevenue;
+  /**
+   * 销售额
+   */
+  private double contractDetailSaleroom;
+  /**
+   * 创建时间
+   */
+  private String gmtCreate;
+  /**
+   * 修改时间
+   */
+  private String gmtModified;
 
+  /**
+   * 无参构造
+   */
+  public ContractDetail() {
+  }
+
+  /**
+   * 有参构造
+   * @param pkContractDetailId
+   * @param fkContractId
+   * @param contractDetailName
+   * @param contractDetailModelType
+   * @param contractDetailMeasurement
+   * @param contractDetailNumber
+   * @param contractDetailUnivalence
+   * @param contractDetailPrice
+   * @param contractDetailTotalSum
+   * @param contractDetailDiscount
+   * @param contractDetailGrossProfit
+   * @param contractDetailRate
+   * @param contractDetailRevenue
+   * @param contractDetailSaleroom
+   * @param gmtCreate
+   * @param gmtModified
+   */
+  public ContractDetail(long pkContractDetailId, long fkContractId, String contractDetailName, String contractDetailModelType, String contractDetailMeasurement, long contractDetailNumber, double contractDetailUnivalence, double contractDetailPrice, double contractDetailTotalSum, double contractDetailDiscount, double contractDetailGrossProfit, double contractDetailRate, double contractDetailRevenue, double contractDetailSaleroom, String gmtCreate, String gmtModified) {
+    this.pkContractDetailId = pkContractDetailId;
+    this.fkContractId = fkContractId;
+    this.contractDetailName = contractDetailName;
+    this.contractDetailModelType = contractDetailModelType;
+    this.contractDetailMeasurement = contractDetailMeasurement;
+    this.contractDetailNumber = contractDetailNumber;
+    this.contractDetailUnivalence = contractDetailUnivalence;
+    this.contractDetailPrice = contractDetailPrice;
+    this.contractDetailTotalSum = contractDetailTotalSum;
+    this.contractDetailDiscount = contractDetailDiscount;
+    this.contractDetailGrossProfit = contractDetailGrossProfit;
+    this.contractDetailRate = contractDetailRate;
+    this.contractDetailRevenue = contractDetailRevenue;
+    this.contractDetailSaleroom = contractDetailSaleroom;
+    this.gmtCreate = gmtCreate;
+    this.gmtModified = gmtModified;
+  }
+
+  /**
+   * 显示数据
+   * @return
+   */
+  @Override
+  public String toString() {
+    return "ContractDetail{" +
+            "pkContractDetailId=" + pkContractDetailId +
+            ", fkContractId=" + fkContractId +
+            ", contractDetailName='" + contractDetailName + '\'' +
+            ", contractDetailModelType='" + contractDetailModelType + '\'' +
+            ", contractDetailMeasurement='" + contractDetailMeasurement + '\'' +
+            ", contractDetailNumber=" + contractDetailNumber +
+            ", contractDetailUnivalence=" + contractDetailUnivalence +
+            ", contractDetailPrice=" + contractDetailPrice +
+            ", contractDetailTotalSum=" + contractDetailTotalSum +
+            ", contractDetailDiscount=" + contractDetailDiscount +
+            ", contractDetailGrossProfit=" + contractDetailGrossProfit +
+            ", contractDetailRate=" + contractDetailRate +
+            ", contractDetailRevenue=" + contractDetailRevenue +
+            ", contractDetailSaleroom=" + contractDetailSaleroom +
+            ", gmtCreate='" + gmtCreate + '\'' +
+            ", gmtModified='" + gmtModified + '\'' +
+            '}';
+  }
 
   public long getPkContractDetailId() {
     return pkContractDetailId;
@@ -37,7 +155,6 @@ public class ContractDetail {
     this.pkContractDetailId = pkContractDetailId;
   }
 
-
   public long getFkContractId() {
     return fkContractId;
   }
@@ -45,7 +162,6 @@ public class ContractDetail {
   public void setFkContractId(long fkContractId) {
     this.fkContractId = fkContractId;
   }
-
 
   public String getContractDetailName() {
     return contractDetailName;
@@ -55,148 +171,107 @@ public class ContractDetail {
     this.contractDetailName = contractDetailName;
   }
 
-
-  public String getContractAccessoryModeltype() {
-    return contractAccessoryModeltype;
+  public String getContractDetailModelType() {
+    return contractDetailModelType;
   }
 
-  public void setContractAccessoryModeltype(String contractAccessoryModeltype) {
-    this.contractAccessoryModeltype = contractAccessoryModeltype;
+  public void setContractDetailModelType(String contractDetailModelType) {
+    this.contractDetailModelType = contractDetailModelType;
   }
 
-
-  public String getContractAccessoryMeasurement() {
-    return contractAccessoryMeasurement;
+  public String getContractDetailMeasurement() {
+    return contractDetailMeasurement;
   }
 
-  public void setContractAccessoryMeasurement(String contractAccessoryMeasurement) {
-    this.contractAccessoryMeasurement = contractAccessoryMeasurement;
+  public void setContractDetailMeasurement(String contractDetailMeasurement) {
+    this.contractDetailMeasurement = contractDetailMeasurement;
   }
 
-
-  public long getContractAccessoryNumber() {
-    return contractAccessoryNumber;
+  public long getContractDetailNumber() {
+    return contractDetailNumber;
   }
 
-  public void setContractAccessoryNumber(long contractAccessoryNumber) {
-    this.contractAccessoryNumber = contractAccessoryNumber;
+  public void setContractDetailNumber(long contractDetailNumber) {
+    this.contractDetailNumber = contractDetailNumber;
   }
 
-
-  public double getContractAccessoryUnivalence() {
-    return contractAccessoryUnivalence;
+  public double getContractDetailUnivalence() {
+    return contractDetailUnivalence;
   }
 
-  public void setContractAccessoryUnivalence(double contractAccessoryUnivalence) {
-    this.contractAccessoryUnivalence = contractAccessoryUnivalence;
+  public void setContractDetailUnivalence(double contractDetailUnivalence) {
+    this.contractDetailUnivalence = contractDetailUnivalence;
   }
 
-
-  public double getContractAccessoryPrice() {
-    return contractAccessoryPrice;
+  public double getContractDetailPrice() {
+    return contractDetailPrice;
   }
 
-  public void setContractAccessoryPrice(double contractAccessoryPrice) {
-    this.contractAccessoryPrice = contractAccessoryPrice;
+  public void setContractDetailPrice(double contractDetailPrice) {
+    this.contractDetailPrice = contractDetailPrice;
   }
 
-
-  public double getContractAccessoryTotalsum() {
-    return contractAccessoryTotalsum;
+  public double getContractDetailTotalSum() {
+    return contractDetailTotalSum;
   }
 
-  public void setContractAccessoryTotalsum(double contractAccessoryTotalsum) {
-    this.contractAccessoryTotalsum = contractAccessoryTotalsum;
+  public void setContractDetailTotalSum(double contractDetailTotalSum) {
+    this.contractDetailTotalSum = contractDetailTotalSum;
   }
 
-
-  public double getContractAccessoryDiscount() {
-    return contractAccessoryDiscount;
+  public double getContractDetailDiscount() {
+    return contractDetailDiscount;
   }
 
-  public void setContractAccessoryDiscount(double contractAccessoryDiscount) {
-    this.contractAccessoryDiscount = contractAccessoryDiscount;
+  public void setContractDetailDiscount(double contractDetailDiscount) {
+    this.contractDetailDiscount = contractDetailDiscount;
   }
 
-
-  public double getContractAccessoryGrossProfit() {
-    return contractAccessoryGrossProfit;
+  public double getContractDetailGrossProfit() {
+    return contractDetailGrossProfit;
   }
 
-  public void setContractAccessoryGrossProfit(double contractAccessoryGrossProfit) {
-    this.contractAccessoryGrossProfit = contractAccessoryGrossProfit;
+  public void setContractDetailGrossProfit(double contractDetailGrossProfit) {
+    this.contractDetailGrossProfit = contractDetailGrossProfit;
   }
 
-
-  public double getContractAccessoryRate() {
-    return contractAccessoryRate;
+  public double getContractDetailRate() {
+    return contractDetailRate;
   }
 
-  public void setContractAccessoryRate(double contractAccessoryRate) {
-    this.contractAccessoryRate = contractAccessoryRate;
+  public void setContractDetailRate(double contractDetailRate) {
+    this.contractDetailRate = contractDetailRate;
   }
 
-
-  public double getContractAccessoryRevenue() {
-    return contractAccessoryRevenue;
+  public double getContractDetailRevenue() {
+    return contractDetailRevenue;
   }
 
-  public void setContractAccessoryRevenue(double contractAccessoryRevenue) {
-    this.contractAccessoryRevenue = contractAccessoryRevenue;
+  public void setContractDetailRevenue(double contractDetailRevenue) {
+    this.contractDetailRevenue = contractDetailRevenue;
   }
 
-
-  public double getContractAccessorySaleroom() {
-    return contractAccessorySaleroom;
+  public double getContractDetailSaleroom() {
+    return contractDetailSaleroom;
   }
 
-  public void setContractAccessorySaleroom(double contractAccessorySaleroom) {
-    this.contractAccessorySaleroom = contractAccessorySaleroom;
+  public void setContractDetailSaleroom(double contractDetailSaleroom) {
+    this.contractDetailSaleroom = contractDetailSaleroom;
   }
 
-
-  public java.sql.Timestamp getGmtCreate() {
+  public String getGmtCreate() {
     return gmtCreate;
   }
 
-  public void setGmtCreate(java.sql.Timestamp gmtCreate) {
+  public void setGmtCreate(String gmtCreate) {
     this.gmtCreate = gmtCreate;
   }
 
-
-  public java.sql.Timestamp getGmtModified() {
+  public String getGmtModified() {
     return gmtModified;
   }
 
-  public void setGmtModified(java.sql.Timestamp gmtModified) {
+  public void setGmtModified(String gmtModified) {
     this.gmtModified = gmtModified;
   }
-
-
-  public String getSa() {
-    return sa;
-  }
-
-  public void setSa(String sa) {
-    this.sa = sa;
-  }
-
-
-  public String getSb() {
-    return sb;
-  }
-
-  public void setSb(String sb) {
-    this.sb = sb;
-  }
-
-
-  public String getSc() {
-    return sc;
-  }
-
-  public void setSc(String sc) {
-    this.sc = sc;
-  }
-
 }
