@@ -58,7 +58,7 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.48</version>
         </dependency>
-        <!-- druid 数据库连接池 -->
+        <!-- druid 数据库连接池 阿道夫-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
