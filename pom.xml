@@ -78,6 +78,7 @@
         </dependency>
 
         <!-- thymeleaf整合shiro标签 -->
+        <!-- wdnmdhjbhbhbgbhbmh -->
         <dependency>
             <groupId>com.github.theborakompanioni</groupId>
             <artifactId>thymeleaf-extras-shiro</artifactId>
