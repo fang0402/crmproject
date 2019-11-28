@@ -1,132 +1,129 @@
-/**
- * 文件名
- * 版权(c) 2019-雷升公司 CRM项目组：
- *  * 版 本 号：1.0
+/*
+ * 文 件 名：
+ * 版权(c) 2019-雷升公司 crm项目组：
+ * 版 本 号： 1.0
  */
 package com.csdj.crmproject.crmproject.entity;
 
 /**
  * @author 尹嘉丽
- * @date 2019-11-27
  * @version 1.0
- *合同
+ * @date 2019-11-28
+ * 合同
  */
 public class Contract {
   /**
-   *合同编号
+   * 合同编号
    */
-  private long contractId;
+  private long pkContractId;
   /**
-   *合同名称
+   * 合同名称
    */
   private String contractName;
   /**
-   *不含税总额
+   * 不含税总额
    */
-  private double totalSum;
+  private double contractTotalSum;
   /**
-   *毛利润
+   * 毛利润
    */
-  private double grossProfit;
+  private double contractGrossProfit;
   /**
-   *税收
+   * 税收
    */
-  private double revenue;
+  private double contractRevenue;
   /**
-   *销售额
+   * 销售额
    */
-  private double saleroom;
+  private double contractSaleroom;
   /**
-   *已汇款金额
+   * 已汇款金额
    */
-  private double amountRemitted;
+  private double contractAmountRemitted;
   /**
-   *已开票金额
+   * 已开票金额
    */
-  private double invoiceAmount;
+  private double contractInvoiceAmount;
   /**
-   *审批状态
+   * 审批状态
    */
-  private String approvalStatus;
+  private String contractApprovalStatus;
   /**
-   *审批结果
+   * 审批结果
    */
-  private String approvalResult;
+  private String contractApprovalResult;
   /**
-   *审批时间
+   * 审批时间
    */
-  private String approvalTime;
+  private String contractApprovalTime;
   /**
-   *合同类型
+   * 合同类型
    */
   private String contractType;
   /**
-   *关联客户类型id
+   * 关联客户类型编号
    */
-  private long clientTypeId;
+  private long fkCusTypeId;
   /**
-   *关联客户id
+   * 客户编号
    */
-  private long clientId;
+  private long fkCusId;
   /**
-   *关联客户名称
+   * 客户名称
    */
-  private String clientName;
+  private String fkCusName;
   /**
-   *关联对象类型id
+   * 所属对象类型编号
    */
-  private long objectTypeId;
+  private long fkObjectTypeId;
   /**
-   *关联对象id
+   * 所属对象编号
    */
-  private long objectId;
+  private long fkObjectId;
   /**
-   *关联对象姓名
+   * 所属对象姓名
    */
-  private String objectName;
+  private String fkObjectName;
   /**
-   *开始时间
+   * 开始时间
    */
   private String startTime;
   /**
-   *结束时间
+   * 结束时间
    */
   private String endTime;
   /**
-   *客户签约人
+   * 签约人编号 关联联系人表
    */
-  private String signPerson;
+  private String fkContactsId;
   /**
-   *负责人
+   * 负责人 关联用户表
    */
-  private String principal;
+  private String fkUserId;
   /**
-   *支付方式
+   * 支付方式
    */
-  private String payment;
+  private String contractPayment;
   /**
-   *备注
+   * 备注
    */
-  private String context;
+  private String contractContext;
   /**
-   *创建人
+   * 创建人
    */
   private String creator;
   /**
-   *创建时间
+   * 创建时间
    */
-  private String createTime;
+  private String gmtCreate;
   /**
-   *修改人
+   * 修改人
    */
   private String modifier;
   /**
-   *修改时间
+   * 修改时间
    */
-  private String modifyTime;
-
-
-
+  private String gmtModified;
 
   /**
    * 无参构造
@@ -136,65 +133,64 @@ public class Contract {
 
   /**
    * 有参构造
-   * @param contractId
+   * @param pkContractId
    * @param contractName
-   * @param totalSum
-   * @param grossProfit
-   * @param revenue
-   * @param saleroom
-   * @param amountRemitted
-   * @param invoiceAmount
-   * @param approvalStatus
-   * @param approvalResult
-   * @param approvalTime
+   * @param contractTotalSum
+   * @param contractGrossProfit
+   * @param contractRevenue
+   * @param contractSaleroom
+   * @param contractAmountRemitted
+   * @param contractInvoiceAmount
+   * @param contractApprovalStatus
+   * @param contractApprovalResult
+   * @param contractApprovalTime
    * @param contractType
-   * @param clientTypeId
-   * @param clientId
-   * @param clientName
-   * @param objectTypeId
-   * @param objectId
-   * @param objectName
+   * @param fkCusTypeId
+   * @param fkCusId
+   * @param fkCusName
+   * @param fkObjectTypeId
+   * @param fkObjectId
+   * @param fkObjectName
    * @param startTime
    * @param endTime
-   * @param signPerson
-   * @param principal
-   * @param payment
-   * @param context
+   * @param fkContactsId
+   * @param fkUserId
+   * @param contractPayment
+   * @param contractContext
    * @param creator
-   * @param createTime
+   * @param gmtCreate
    * @param modifier
-   * @param modifyTime
+   * @param gmtModified
    */
-  public Contract(long contractId, String contractName, double totalSum, double grossProfit, double revenue, double saleroom, double amountRemitted, double invoiceAmount, String approvalStatus, String approvalResult, String approvalTime, String contractType, long clientTypeId, long clientId, String clientName, long objectTypeId, long objectId, String objectName, String startTime, String endTime, String signPerson, String principal, String payment, String context, String creator, String createTime, String modifier, String modifyTime) {
-    this.contractId = contractId;
+  public Contract(long pkContractId, String contractName, double contractTotalSum, double contractGrossProfit, double contractRevenue, double contractSaleroom, double contractAmountRemitted, double contractInvoiceAmount, String contractApprovalStatus, String contractApprovalResult, String contractApprovalTime, String contractType, long fkCusTypeId, long fkCusId, String fkCusName, long fkObjectTypeId, long fkObjectId, String fkObjectName, String startTime, String endTime, String fkContactsId, String fkUserId, String contractPayment, String contractContext, String creator, String gmtCreate, String modifier, String gmtModified) {
+    this.pkContractId = pkContractId;
     this.contractName = contractName;
-    this.totalSum = totalSum;
-    this.grossProfit = grossProfit;
-    this.revenue = revenue;
-    this.saleroom = saleroom;
-    this.amountRemitted = amountRemitted;
-    this.invoiceAmount = invoiceAmount;
-    this.approvalStatus = approvalStatus;
-    this.approvalResult = approvalResult;
-    this.approvalTime = approvalTime;
+    this.contractTotalSum = contractTotalSum;
+    this.contractGrossProfit = contractGrossProfit;
+    this.contractRevenue = contractRevenue;
+    this.contractSaleroom = contractSaleroom;
+    this.contractAmountRemitted = contractAmountRemitted;
+    this.contractInvoiceAmount = contractInvoiceAmount;
+    this.contractApprovalStatus = contractApprovalStatus;
+    this.contractApprovalResult = contractApprovalResult;
+    this.contractApprovalTime = contractApprovalTime;
     this.contractType = contractType;
-    this.clientTypeId = clientTypeId;
-    this.clientId = clientId;
-    this.clientName = clientName;
-    this.objectTypeId = objectTypeId;
-    this.objectId = objectId;
-    this.objectName = objectName;
+    this.fkCusTypeId = fkCusTypeId;
+    this.fkCusId = fkCusId;
+    this.fkCusName = fkCusName;
+    this.fkObjectTypeId = fkObjectTypeId;
+    this.fkObjectId = fkObjectId;
+    this.fkObjectName = fkObjectName;
     this.startTime = startTime;
     this.endTime = endTime;
-    this.signPerson = signPerson;
-    this.principal = principal;
-    this.payment = payment;
-    this.context = context;
+    this.fkContactsId = fkContactsId;
+    this.fkUserId = fkUserId;
+    this.contractPayment = contractPayment;
+    this.contractContext = contractContext;
     this.creator = creator;
-    this.createTime = createTime;
+    this.gmtCreate = gmtCreate;
     this.modifier = modifier;
-    this.modifyTime = modifyTime;
-
+    this.gmtModified = gmtModified;
   }
 
   /**
@@ -204,45 +200,44 @@ public class Contract {
   @Override
   public String toString() {
     return "Contract{" +
-            "contractId=" + contractId +
+            "pkContractId=" + pkContractId +
             ", contractName='" + contractName + '\'' +
-            ", totalSum=" + totalSum +
-            ", grossProfit=" + grossProfit +
-            ", revenue=" + revenue +
-            ", saleroom=" + saleroom +
-            ", amountRemitted=" + amountRemitted +
-            ", invoiceAmount=" + invoiceAmount +
-            ", approvalStatus='" + approvalStatus + '\'' +
-            ", approvalResult='" + approvalResult + '\'' +
-            ", approvalTime='" + approvalTime + '\'' +
+            ", contractTotalSum=" + contractTotalSum +
+            ", contractGrossProfit=" + contractGrossProfit +
+            ", contractRevenue=" + contractRevenue +
+            ", contractSaleroom=" + contractSaleroom +
+            ", contractAmountRemitted=" + contractAmountRemitted +
+            ", contractInvoiceAmount=" + contractInvoiceAmount +
+            ", contractApprovalStatus='" + contractApprovalStatus + '\'' +
+            ", contractApprovalResult='" + contractApprovalResult + '\'' +
+            ", contractApprovalTime='" + contractApprovalTime + '\'' +
             ", contractType='" + contractType + '\'' +
-            ", clientTypeId=" + clientTypeId +
-            ", clientId=" + clientId +
-            ", clientName='" + clientName + '\'' +
-            ", objectTypeId=" + objectTypeId +
-            ", objectId=" + objectId +
-            ", objectName='" + objectName + '\'' +
+            ", fkCusTypeId=" + fkCusTypeId +
+            ", fkCusId=" + fkCusId +
+            ", fkCusName='" + fkCusName + '\'' +
+            ", fkObjectTypeId=" + fkObjectTypeId +
+            ", fkObjectId=" + fkObjectId +
+            ", fkObjectName='" + fkObjectName + '\'' +
             ", startTime='" + startTime + '\'' +
             ", endTime='" + endTime + '\'' +
-            ", signPerson='" + signPerson + '\'' +
-            ", principal='" + principal + '\'' +
-            ", payment='" + payment + '\'' +
-            ", context='" + context + '\'' +
+            ", fkContactsId='" + fkContactsId + '\'' +
+            ", fkUserId='" + fkUserId + '\'' +
+            ", contractPayment='" + contractPayment + '\'' +
+            ", contractContext='" + contractContext + '\'' +
             ", creator='" + creator + '\'' +
-            ", createTime='" + createTime + '\'' +
+            ", gmtCreate='" + gmtCreate + '\'' +
             ", modifier='" + modifier + '\'' +
-            ", modifyTime='" + modifyTime + '\'' +
+            ", gmtModified='" + gmtModified + '\'' +
             '}';
   }
 
-  public long getContractId() {
-    return contractId;
+  public long getPkContractId() {
+    return pkContractId;
   }
 
-  public void setContractId(long contractId) {
-    this.contractId = contractId;
+  public void setPkContractId(long pkContractId) {
+    this.pkContractId = pkContractId;
   }
-
 
   public String getContractName() {
     return contractName;
@@ -252,87 +247,77 @@ public class Contract {
     this.contractName = contractName;
   }
 
-
-  public double getTotalSum() {
-    return totalSum;
+  public double getContractTotalSum() {
+    return contractTotalSum;
   }
 
-  public void setTotalSum(double totalSum) {
-    this.totalSum = totalSum;
+  public void setContractTotalSum(double contractTotalSum) {
+    this.contractTotalSum = contractTotalSum;
   }
 
-
-  public double getGrossProfit() {
-    return grossProfit;
+  public double getContractGrossProfit() {
+    return contractGrossProfit;
   }
 
-  public void setGrossProfit(double grossProfit) {
-    this.grossProfit = grossProfit;
+  public void setContractGrossProfit(double contractGrossProfit) {
+    this.contractGrossProfit = contractGrossProfit;
   }
 
-
-  public double getRevenue() {
-    return revenue;
+  public double getContractRevenue() {
+    return contractRevenue;
   }
 
-  public void setRevenue(double revenue) {
-    this.revenue = revenue;
+  public void setContractRevenue(double contractRevenue) {
+    this.contractRevenue = contractRevenue;
   }
 
-
-  public double getSaleroom() {
-    return saleroom;
+  public double getContractSaleroom() {
+    return contractSaleroom;
   }
 
-  public void setSaleroom(double saleroom) {
-    this.saleroom = saleroom;
+  public void setContractSaleroom(double contractSaleroom) {
+    this.contractSaleroom = contractSaleroom;
   }
 
-
-  public double getAmountRemitted() {
-    return amountRemitted;
+  public double getContractAmountRemitted() {
+    return contractAmountRemitted;
   }
 
-  public void setAmountRemitted(double amountRemitted) {
-    this.amountRemitted = amountRemitted;
+  public void setContractAmountRemitted(double contractAmountRemitted) {
+    this.contractAmountRemitted = contractAmountRemitted;
   }
 
-
-  public double getInvoiceAmount() {
-    return invoiceAmount;
+  public double getContractInvoiceAmount() {
+    return contractInvoiceAmount;
   }
 
-  public void setInvoiceAmount(double invoiceAmount) {
-    this.invoiceAmount = invoiceAmount;
+  public void setContractInvoiceAmount(double contractInvoiceAmount) {
+    this.contractInvoiceAmount = contractInvoiceAmount;
   }
 
-
-  public String getApprovalStatus() {
-    return approvalStatus;
+  public String getContractApprovalStatus() {
+    return contractApprovalStatus;
   }
 
-  public void setApprovalStatus(String approvalStatus) {
-    this.approvalStatus = approvalStatus;
+  public void setContractApprovalStatus(String contractApprovalStatus) {
+    this.contractApprovalStatus = contractApprovalStatus;
   }
 
-
-  public String getApprovalResult() {
-    return approvalResult;
+  public String getContractApprovalResult() {
+    return contractApprovalResult;
   }
 
-  public void setApprovalResult(String approvalResult) {
-    this.approvalResult = approvalResult;
+  public void setContractApprovalResult(String contractApprovalResult) {
+    this.contractApprovalResult = contractApprovalResult;
   }
 
-
-  public String getApprovalTime() {
-    return approvalTime;
+  public String getContractApprovalTime() {
+    return contractApprovalTime;
   }
 
-  public void setApprovalTime(String approvalTime) {
-    this.approvalTime = approvalTime;
+  public void setContractApprovalTime(String contractApprovalTime) {
+    this.contractApprovalTime = contractApprovalTime;
   }
-
 
   public String getContractType() {
     return contractType;
@@ -342,60 +327,53 @@ public class Contract {
     this.contractType = contractType;
   }
 
-
-  public long getClientTypeId() {
-    return clientTypeId;
+  public long getFkCusTypeId() {
+    return fkCusTypeId;
   }
 
-  public void setClientTypeId(long clientTypeId) {
-    this.clientTypeId = clientTypeId;
+  public void setFkCusTypeId(long fkCusTypeId) {
+    this.fkCusTypeId = fkCusTypeId;
   }
 
-
-  public long getClientId() {
-    return clientId;
+  public long getFkCusId() {
+    return fkCusId;
   }
 
-  public void setClientId(long clientId) {
-    this.clientId = clientId;
+  public void setFkCusId(long fkCusId) {
+    this.fkCusId = fkCusId;
   }
 
-
-  public String getClientName() {
-    return clientName;
+  public String getFkCusName() {
+    return fkCusName;
   }
 
-  public void setClientName(String clientName) {
-    this.clientName = clientName;
+  public void setFkCusName(String fkCusName) {
+    this.fkCusName = fkCusName;
   }
 
-
-  public long getObjectTypeId() {
-    return objectTypeId;
+  public long getFkObjectTypeId() {
+    return fkObjectTypeId;
   }
 
-  public void setObjectTypeId(long objectTypeId) {
-    this.objectTypeId = objectTypeId;
+  public void setFkObjectTypeId(long fkObjectTypeId) {
+    this.fkObjectTypeId = fkObjectTypeId;
   }
 
-
-  public long getObjectid() {
-    return objectId;
+  public long getFkObjectId() {
+    return fkObjectId;
   }
 
-  public void setObjectId(long objectId) {
-    this.objectId = objectId;
+  public void setFkObjectId(long fkObjectId) {
+    this.fkObjectId = fkObjectId;
   }
 
-
-  public String getObjectName() {
-    return objectName;
+  public String getFkObjectName() {
+    return fkObjectName;
   }
 
-  public void setObjectName(String objectName) {
-    this.objectName = objectName;
+  public void setFkObjectName(String fkObjectName) {
+    this.fkObjectName = fkObjectName;
   }
-
 
   public String getStartTime() {
     return startTime;
@@ -405,7 +383,6 @@ public class Contract {
     this.startTime = startTime;
   }
 
-
   public String getEndTime() {
     return endTime;
   }
@@ -414,42 +391,37 @@ public class Contract {
     this.endTime = endTime;
   }
 
-
-  public String getSignPerson() {
-    return signPerson;
+  public String getFkContactsId() {
+    return fkContactsId;
   }
 
-  public void setSignPerson(String signPerson) {
-    this.signPerson = signPerson;
+  public void setFkContactsId(String fkContactsId) {
+    this.fkContactsId = fkContactsId;
   }
 
-
-  public String getPrincipal() {
-    return principal;
+  public String getFkUserId() {
+    return fkUserId;
   }
 
-  public void setPrincipal(String principal) {
-    this.principal = principal;
+  public void setFkUserId(String fkUserId) {
+    this.fkUserId = fkUserId;
   }
 
-
-  public String getPayment() {
-    return payment;
+  public String getContractPayment() {
+    return contractPayment;
   }
 
-  public void setPayment(String payment) {
-    this.payment = payment;
+  public void setContractPayment(String contractPayment) {
+    this.contractPayment = contractPayment;
   }
 
-
-  public String getContext() {
-    return context;
+  public String getContractContext() {
+    return contractContext;
   }
 
-  public void setContext(String context) {
-    this.context = context;
+  public void setContractContext(String contractContext) {
+    this.contractContext = contractContext;
   }
-
 
   public String getCreator() {
     return creator;
@@ -459,15 +431,13 @@ public class Contract {
     this.creator = creator;
   }
 
-
-  public String getCreateTime() {
-    return createTime;
+  public String getGmtCreate() {
+    return gmtCreate;
   }
 
-  public void setCreateTime(String createTime) {
-    this.createTime = createTime;
+  public void setGmtCreate(String gmtCreate) {
+    this.gmtCreate = gmtCreate;
   }
-
 
   public String getModifier() {
     return modifier;
@@ -477,14 +447,11 @@ public class Contract {
     this.modifier = modifier;
   }
 
-
-  public String getModifyTime() {
-    return modifyTime;
+  public String getGmtModified() {
+    return gmtModified;
   }
 
-  public void setModifyTime(String modifyTime) {
-    this.modifyTime = modifyTime;
+  public void setGmtModified(String gmtModified) {
+    this.gmtModified = gmtModified;
   }
-
-
 }
