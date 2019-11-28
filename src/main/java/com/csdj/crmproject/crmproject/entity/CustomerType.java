@@ -2,7 +2,7 @@ package com.csdj.crmproject.crmproject.entity;
 
 /**
  * 客户类型实体
- * @author 许昊1
+ * @author 许昊
  * @date 2019/11/27
  * @version 1.0
  */
