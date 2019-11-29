@@ -1,109 +1,172 @@
-/*
- * 文 件 名：客户拜访
- * 版权(c) 2019-雷升公司 crm项目组：
- * 版 本 号：1.0
- */
 package com.csdj.crmproject.crmproject.entity;
 
 /**
- * 客户投诉附件实体类
- * @author xsy
- * @date 2019/11/27 0027 下午 3:01
- * @version crm1.0
- */
+ * @version 1.0
+ * @ClassName FaultRepairs
+ * @Author 熊志涛
+ * @Date 2019/11/26
+ * @Describe 附加表
+ **/
 public class Accessory {
+
     /**
-     * 附件编号
+     * id
      */
-    private Integer pkAccId;
+    private int pkAccessoryId;
     /**
-     * 附件名称
+     * 故障报修id
      */
-    private String accName;
+    private int fkFaultWarId;
     /**
-     * 文件
+     * 名称
      */
-    private String accFile;
+    private String accessoryName;
+    /**
+     * 简介
+     */
+    private String accessoryIntro;
+    /**
+     * 文件url
+     */
+    private String accessoryFileUrl;
+    /**
+     * 所属对象类型id
+     */
+    private String fkObjectTypeId;
+    /**
+     * 所属对象id
+     */
+    private int fkSubordinateObjectId;
+    /**
+     * 所属对象名称
+     */
+    private int accessorySubordinateObjectName;
     /**
      * 创建人
      */
-    private String accCreator;
-    /**
-     * 创建时间
-     */
-    private String accGmtCreate;
+    private String accessoryCreator;
+
+    public int getPkAccessoryId() {
+        return pkAccessoryId;
+    }
+
+    public void setPkAccessoryId(int pkAccessoryId) {
+        this.pkAccessoryId = pkAccessoryId;
+    }
+
+    public int getFkFaultWarId() {
+        return fkFaultWarId;
+    }
+
+    public void setFkFaultWarId(int fkFaultWarId) {
+        this.fkFaultWarId = fkFaultWarId;
+    }
+
+    public String getAccessoryName() {
+        return accessoryName;
+    }
+
+    public void setAccessoryName(String accessoryName) {
+        this.accessoryName = accessoryName;
+    }
+
+    public String getAccessoryIntro() {
+        return accessoryIntro;
+    }
+
+    public void setAccessoryIntro(String accessoryIntro) {
+        this.accessoryIntro = accessoryIntro;
+    }
+
+    public String getAccessoryFileUrl() {
+        return accessoryFileUrl;
+    }
+
+    public void setAccessoryFileUrl(String accessoryFileUrl) {
+        this.accessoryFileUrl = accessoryFileUrl;
+    }
+
+    public String getFkObjectTypeId() {
+        return fkObjectTypeId;
+    }
+
+    public void setFkObjectTypeId(String fkObjectTypeId) {
+        this.fkObjectTypeId = fkObjectTypeId;
+    }
+
+    public int getFkSubordinateObjectId() {
+        return fkSubordinateObjectId;
+    }
+
+    public void setFkSubordinateObjectId(int fkSubordinateObjectId) {
+        this.fkSubordinateObjectId = fkSubordinateObjectId;
+    }
+
+    public int getAccessorySubordinateObjectName() {
+        return accessorySubordinateObjectName;
+    }
+
+    public void setAccessorySubordinateObjectName(int accessorySubordinateObjectName) {
+        this.accessorySubordinateObjectName = accessorySubordinateObjectName;
+    }
+
+    public String getAccessoryCreator() {
+        return accessoryCreator;
+    }
+
+    public void setAccessoryCreator(String accessoryCreator) {
+        this.accessoryCreator = accessoryCreator;
+    }
 
     /**
-     * 无参构造函数
+     * 默认构造方法
      */
     public Accessory() {
     }
 
     /**
-     * 有参构造函数
-     * @param pkAccId
-     * @param accName
-     * @param accFile
-     * @param accCreator
-     * @param accGmtCreate
+     * 带参构造方法
+     *
+     * @param pkAccessoryId
+     * @param fkFaultWarId
+     * @param accessoryName
+     * @param accessoryIntro
+     * @param accessoryFileUrl
+     * @param fkObjectTypeId
+     * @param fkSubordinateObjectId
+     * @param accessorySubordinateObjectName
+     * @param accessoryCreator
      */
-    public Accessory(Integer pkAccId, String accName, String accFile, String accCreator, String accGmtCreate) {
-        this.pkAccId = pkAccId;
-        this.accName = accName;
-        this.accFile = accFile;
-        this.accCreator = accCreator;
-        this.accGmtCreate = accGmtCreate;
-    }
-
-    public Integer getPkAccId() {
-        return pkAccId;
-    }
-
-    public String getAccName() {
-        return accName;
-    }
-
-    public String getAccFile() {
-        return accFile;
-    }
-
-    public String getAccCreator() {
-        return accCreator;
-    }
-
-    public String getAccGmtCreate() {
-        return accGmtCreate;
+    public Accessory(int pkAccessoryId, int fkFaultWarId, String accessoryName, String accessoryIntro, String accessoryFileUrl, String fkObjectTypeId, int fkSubordinateObjectId, int accessorySubordinateObjectName, String accessoryCreator) {
+        this.pkAccessoryId = pkAccessoryId;
+        this.fkFaultWarId = fkFaultWarId;
+        this.accessoryName = accessoryName;
+        this.accessoryIntro = accessoryIntro;
+        this.accessoryFileUrl = accessoryFileUrl;
+        this.fkObjectTypeId = fkObjectTypeId;
+        this.fkSubordinateObjectId = fkSubordinateObjectId;
+        this.accessorySubordinateObjectName = accessorySubordinateObjectName;
+        this.accessoryCreator = accessoryCreator;
     }
 
 
-    public void setPkAccId(Integer pkAccId) {
-        this.pkAccId = pkAccId;
-    }
-
-    public void setAccName(String accName) {
-        this.accName = accName;
-    }
-
-    public void setAccFile(String accFile) {
-        this.accFile = accFile;
-    }
-
-    public void setAccCreator(String accCreator) {
-        this.accCreator = accCreator;
-    }
-
-    public void setAccGmtCreate(String accGmtCreate) {
-        this.accGmtCreate = accGmtCreate;
-    }
-
+    /**
+     * 打印方法
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Accessory{" +
-                "pkAccId=" + pkAccId +
-                ", accName='" + accName + '\'' +
-                ", accFile='" + accFile + '\'' +
-                ", accCreator='" + accCreator + '\'' +
-                ", accGmtCreate='" + accGmtCreate + '\'' +
+                "pkAccessoryId=" + pkAccessoryId +
+                ", fkFaultWarId=" + fkFaultWarId +
+                ", accessoryName='" + accessoryName + '\'' +
+                ", accessoryIntro='" + accessoryIntro + '\'' +
+                ", accessoryFileUrl='" + accessoryFileUrl + '\'' +
+                ", fkObjectTypeId='" + fkObjectTypeId + '\'' +
+                ", fkSubordinateObjectId=" + fkSubordinateObjectId +
+                ", accessorySubordinateObjectName=" + accessorySubordinateObjectName +
+                ", accessoryCreator='" + accessoryCreator + '\'' +
                 '}';
     }
 }
