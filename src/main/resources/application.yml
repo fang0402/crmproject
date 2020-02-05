@@ -6,33 +6,15 @@ server:
 
 #静态资源
 spring:
+  mvc:
+    static-path-pattern: /static/**
   resources:
     static-locations: classpath:/static/
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/crmproject?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
-    password: 123456
-  activiti:
-    check-process-definitions: true
-    database-schema-update: true
-    process-definition-location-prefix: classpath:/process/
-    history-level: full
-
-  redis:
-    database: 0
-    host: localhost
-    port: 6379
-    password:
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: -1
-        max-idle: 8
-        min-idle: 0
-    timeout: 10000
-
-
+    password: 159258
 mybatis:
   mapper-locations: /mapper/**.xml
   type-aliases-package: com.csdj.crmproject.crmproject.entity
