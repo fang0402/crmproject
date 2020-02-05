@@ -5,48 +5,266 @@
  */
 package com.csdj.crmproject.crmproject.entity;
 
-
+/**
+ * @author 尹嘉丽
+ * @version 1.0
+ * @date 2019-11-28
+ * 订单
+ */
 public class Order {
-
+  /**
+   * 订单编号
+   */
   private long orderId;
+  /**
+   * 订单名称
+   */
   private String orderName;
+  /**
+   * 用户类型编号
+   */
   private long fkCusTypeId;
+  /**
+   * 用户编号
+   */
   private long fkCusId;
+  /**
+   * 用户姓名
+   */
   private String fkCusName;
+  /**
+   * 所属对象类型编号
+   */
   private long fkObjectTypeId;
+  /**
+   * 所属对象编号
+   */
   private long fkObjectId;
+  /**
+   * 所属对象姓名
+   */
   private String fkObjectName;
+  /**
+   * 订单类型
+   */
   private String orderType;
-  private double orderTotalsum;
+  /**
+   * 不含税总额
+   */
+  private double orderTotalSum;
+  /**
+   * 毛利润
+   */
   private double orderGrossProfit;
+  /**
+   * 税收
+   */
   private double orderRevenue;
+  /**
+   * 销售额
+   */
   private double orderSaleroom;
+  /**
+   * 签约人 联系人编号
+   */
   private String fkContactsId;
+  /**
+   * 支付方式
+   */
   private String orderPayment;
-  private java.sql.Timestamp orderStartTime;
-  private java.sql.Timestamp orderEndTime;
+  /**
+   * 开始时间
+   */
+  private String orderStartTime;
+  /**
+   * 结束时间
+   */
+  private String orderEndTime;
+  /**
+   * 收货人姓名
+   */
   private String orderConsigneeName;
+  /**
+   * 收货人手机号
+   */
   private String orderConsigneePhone;
+  /**
+   * 收货人email
+   */
   private String orderConsigneeEmail;
+  /**
+   * 收货人地址
+   */
   private String orderConsigneeAddress;
+  /**
+   * 已收款金额
+   */
   private double orderAmountRemitted;
+  /**
+   * 已开票金额
+   */
   private double orderInvoiceAmount;
+  /**
+   * 审批状态
+   */
   private String orderApprovalStatus;
+  /**
+   * 审批结果
+   */
   private String orderApprovalResult;
-  private java.sql.Timestamp orderApprovalTime;
-  private java.sql.Timestamp gmtCreate;
+  /**
+   * 审批时间
+   */
+  private String orderApprovalTime;
+  /**
+   * 创建时间
+   */
+  private String gmtCreate;
+  /**
+   * 创建人
+   */
   private String creator;
-  private java.sql.Timestamp gmtModified;
+  /**
+   * 修改时间
+   */
+  private String gmtModified;
+  /**
+   * 修改人
+   */
   private String modifier;
+  /**
+   * 运输方式
+   */
   private String orderTransportation;
+  /**
+   * 结算方式
+   */
   private String orderSettlement;
+  /**
+   * 备注
+   */
   private String orderContext;
-  private String sa;
-  private String sb;
-  private String sc;
-  private String sd;
-  private String se;
 
+  /**
+   * 无参构造
+   */
+  public Order() {
+  }
+
+  /**
+   * 有参构造
+   * @param orderId
+   * @param orderName
+   * @param fkCusTypeId
+   * @param fkCusId
+   * @param fkCusName
+   * @param fkObjectTypeId
+   * @param fkObjectId
+   * @param fkObjectName
+   * @param orderType
+   * @param orderTotalSum
+   * @param orderGrossProfit
+   * @param orderRevenue
+   * @param orderSaleroom
+   * @param fkContactsId
+   * @param orderPayment
+   * @param orderStartTime
+   * @param orderEndTime
+   * @param orderConsigneeName
+   * @param orderConsigneePhone
+   * @param orderConsigneeEmail
+   * @param orderConsigneeAddress
+   * @param orderAmountRemitted
+   * @param orderInvoiceAmount
+   * @param orderApprovalStatus
+   * @param orderApprovalResult
+   * @param orderApprovalTime
+   * @param gmtCreate
+   * @param creator
+   * @param gmtModified
+   * @param modifier
+   * @param orderTransportation
+   * @param orderSettlement
+   * @param orderContext
+   */
+  public Order(long orderId, String orderName, long fkCusTypeId, long fkCusId, String fkCusName, long fkObjectTypeId, long fkObjectId, String fkObjectName, String orderType, double orderTotalSum, double orderGrossProfit, double orderRevenue, double orderSaleroom, String fkContactsId, String orderPayment, String orderStartTime, String orderEndTime, String orderConsigneeName, String orderConsigneePhone, String orderConsigneeEmail, String orderConsigneeAddress, double orderAmountRemitted, double orderInvoiceAmount, String orderApprovalStatus, String orderApprovalResult, String orderApprovalTime, String gmtCreate, String creator, String gmtModified, String modifier, String orderTransportation, String orderSettlement, String orderContext) {
+    this.orderId = orderId;
+    this.orderName = orderName;
+    this.fkCusTypeId = fkCusTypeId;
+    this.fkCusId = fkCusId;
+    this.fkCusName = fkCusName;
+    this.fkObjectTypeId = fkObjectTypeId;
+    this.fkObjectId = fkObjectId;
+    this.fkObjectName = fkObjectName;
+    this.orderType = orderType;
+    this.orderTotalSum = orderTotalSum;
+    this.orderGrossProfit = orderGrossProfit;
+    this.orderRevenue = orderRevenue;
+    this.orderSaleroom = orderSaleroom;
+    this.fkContactsId = fkContactsId;
+    this.orderPayment = orderPayment;
+    this.orderStartTime = orderStartTime;
+    this.orderEndTime = orderEndTime;
+    this.orderConsigneeName = orderConsigneeName;
+    this.orderConsigneePhone = orderConsigneePhone;
+    this.orderConsigneeEmail = orderConsigneeEmail;
+    this.orderConsigneeAddress = orderConsigneeAddress;
+    this.orderAmountRemitted = orderAmountRemitted;
+    this.orderInvoiceAmount = orderInvoiceAmount;
+    this.orderApprovalStatus = orderApprovalStatus;
+    this.orderApprovalResult = orderApprovalResult;
+    this.orderApprovalTime = orderApprovalTime;
+    this.gmtCreate = gmtCreate;
+    this.creator = creator;
+    this.gmtModified = gmtModified;
+    this.modifier = modifier;
+    this.orderTransportation = orderTransportation;
+    this.orderSettlement = orderSettlement;
+    this.orderContext = orderContext;
+  }
+
+  /**
+   * 显示数据
+   * @return
+   */
+  @Override
+  public String toString() {
+    return "Order{" +
+            "orderId=" + orderId +
+            ", orderName='" + orderName + '\'' +
+            ", fkCusTypeId=" + fkCusTypeId +
+            ", fkCusId=" + fkCusId +
+            ", fkCusName='" + fkCusName + '\'' +
+            ", fkObjectTypeId=" + fkObjectTypeId +
+            ", fkObjectId=" + fkObjectId +
+            ", fkObjectName='" + fkObjectName + '\'' +
+            ", orderType='" + orderType + '\'' +
+            ", orderTotalSum=" + orderTotalSum +
+            ", orderGrossProfit=" + orderGrossProfit +
+            ", orderRevenue=" + orderRevenue +
+            ", orderSaleroom=" + orderSaleroom +
+            ", fkContactsId='" + fkContactsId + '\'' +
+            ", orderPayment='" + orderPayment + '\'' +
+            ", orderStartTime='" + orderStartTime + '\'' +
+            ", orderEndTime='" + orderEndTime + '\'' +
+            ", orderConsigneeName='" + orderConsigneeName + '\'' +
+            ", orderConsigneePhone='" + orderConsigneePhone + '\'' +
+            ", orderConsigneeEmail='" + orderConsigneeEmail + '\'' +
+            ", orderConsigneeAddress='" + orderConsigneeAddress + '\'' +
+            ", orderAmountRemitted=" + orderAmountRemitted +
+            ", orderInvoiceAmount=" + orderInvoiceAmount +
+            ", orderApprovalStatus='" + orderApprovalStatus + '\'' +
+            ", orderApprovalResult='" + orderApprovalResult + '\'' +
+            ", orderApprovalTime='" + orderApprovalTime + '\'' +
+            ", gmtCreate='" + gmtCreate + '\'' +
+            ", creator='" + creator + '\'' +
+            ", gmtModified='" + gmtModified + '\'' +
+            ", modifier='" + modifier + '\'' +
+            ", orderTransportation='" + orderTransportation + '\'' +
+            ", orderSettlement='" + orderSettlement + '\'' +
+            ", orderContext='" + orderContext + '\'' +
+            '}';
+  }
 
   public long getOrderId() {
     return orderId;
@@ -129,12 +347,12 @@ public class Order {
   }
 
 
-  public double getOrderTotalsum() {
-    return orderTotalsum;
+  public double getOrderTotalSum() {
+    return orderTotalSum;
   }
 
-  public void setOrderTotalsum(double orderTotalsum) {
-    this.orderTotalsum = orderTotalsum;
+  public void setOrderTotalSum(double orderTotalSum) {
+    this.orderTotalSum = orderTotalSum;
   }
 
 
@@ -183,20 +401,20 @@ public class Order {
   }
 
 
-  public java.sql.Timestamp getOrderStartTime() {
+  public String getOrderStartTime() {
     return orderStartTime;
   }
 
-  public void setOrderStartTime(java.sql.Timestamp orderStartTime) {
+  public void setOrderStartTime(String orderStartTime) {
     this.orderStartTime = orderStartTime;
   }
 
 
-  public java.sql.Timestamp getOrderEndTime() {
+  public String getOrderEndTime() {
     return orderEndTime;
   }
 
-  public void setOrderEndTime(java.sql.Timestamp orderEndTime) {
+  public void setOrderEndTime(String orderEndTime) {
     this.orderEndTime = orderEndTime;
   }
 
@@ -273,20 +491,20 @@ public class Order {
   }
 
 
-  public java.sql.Timestamp getOrderApprovalTime() {
+  public String getOrderApprovalTime() {
     return orderApprovalTime;
   }
 
-  public void setOrderApprovalTime(java.sql.Timestamp orderApprovalTime) {
+  public void setOrderApprovalTime(String orderApprovalTime) {
     this.orderApprovalTime = orderApprovalTime;
   }
 
 
-  public java.sql.Timestamp getGmtCreate() {
+  public String getGmtCreate() {
     return gmtCreate;
   }
 
-  public void setGmtCreate(java.sql.Timestamp gmtCreate) {
+  public void setGmtCreate(String gmtCreate) {
     this.gmtCreate = gmtCreate;
   }
 
@@ -300,11 +518,11 @@ public class Order {
   }
 
 
-  public java.sql.Timestamp getGmtModified() {
+  public String getGmtModified() {
     return gmtModified;
   }
 
-  public void setGmtModified(java.sql.Timestamp gmtModified) {
+  public void setGmtModified(String gmtModified) {
     this.gmtModified = gmtModified;
   }
 
@@ -345,48 +563,5 @@ public class Order {
   }
 
 
-  public String getSa() {
-    return sa;
-  }
-
-  public void setSa(String sa) {
-    this.sa = sa;
-  }
-
-
-  public String getSb() {
-    return sb;
-  }
-
-  public void setSb(String sb) {
-    this.sb = sb;
-  }
-
-
-  public String getSc() {
-    return sc;
-  }
-
-  public void setSc(String sc) {
-    this.sc = sc;
-  }
-
-
-  public String getSd() {
-    return sd;
-  }
-
-  public void setSd(String sd) {
-    this.sd = sd;
-  }
-
-
-  public String getSe() {
-    return se;
-  }
-
-  public void setSe(String se) {
-    this.se = se;
-  }
 
 }
