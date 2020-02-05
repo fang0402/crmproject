@@ -39,12 +39,7 @@ public class ShiroConfig {
         return advisorAutoProxyCreator;
     }
 
-    @Bean
-    public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor() {
-        AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
-        authorizationAttributeSourceAdvisor.setSecurityManager(getDefaultWebSecurityManager(getRealm()));
-        return authorizationAttributeSourceAdvisor;
-    }
+
 
     /**
      * 创建ShiroFilterFactoryBean
