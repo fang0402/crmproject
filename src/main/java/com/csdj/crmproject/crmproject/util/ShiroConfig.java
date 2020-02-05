@@ -100,13 +100,7 @@ public class ShiroConfig {
         return new LifecycleBeanPostProcessor();
     }
 
-    /**
-     * 创建Realm
-     */
-    @Bean(name = "shiroRealm")
-    public ShiroRealm getRealm() {
-        return new ShiroRealm();
-    }
+
 
     /**
      * 配置ShiroDialect，用于thymeleaf和shiro标签配合使用
