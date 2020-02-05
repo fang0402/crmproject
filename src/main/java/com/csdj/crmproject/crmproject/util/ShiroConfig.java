@@ -84,7 +84,7 @@ public class ShiroConfig {
      * 创建DefaultWebSecurityManager
      */
     @Bean(name = "securityManager")
-    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("shiroRealm") ShiroRealm shiroRealm) {
+    public DefaultWebSecurityManager getDefaultWebSecurityManager(@Qualifier("ShiroRealm") ShiroRealm shiroRealm) {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         //关联realm
         securityManager.setRealm(shiroRealm);
@@ -99,8 +99,6 @@ public class ShiroConfig {
     public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
         return new LifecycleBeanPostProcessor();
     }
-
-
 
     /**
      * 配置ShiroDialect，用于thymeleaf和shiro标签配合使用
