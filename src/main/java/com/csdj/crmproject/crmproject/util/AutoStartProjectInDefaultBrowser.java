@@ -9,7 +9,7 @@ import org.springframework.boot.SpringBootConfiguration;
  * @BelongsPackage: com.csdj.lun.lun.util
  * @Author: admin
  * @CreateTime: 2019-11-04 08:28
- * @Description: 启动时自动调用路径，请自己设置路径
+ * @Description: 启动时自动调用路径，请自己设置路径111111
  */
 @SpringBootConfiguration
 public class AutoStartProjectInDefaultBrowser implements CommandLineRunner {
