@@ -1,8 +1,6 @@
 package com.csdj.crmproject.crmproject.util;
 
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-import com.csdj.activiti.activiti.entity.Resource;
-import com.csdj.activiti.activiti.service.UserManagerService;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
