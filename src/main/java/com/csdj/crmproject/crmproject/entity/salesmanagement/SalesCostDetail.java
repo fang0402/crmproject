@@ -1,9 +1,9 @@
 /*
- * 文 件 名： 销售费用报销明细
+ * 文 件 名： 销售费用报销明细1
  * 版权(c) 2019-雷升公司 crm项目组：
  * 版 本 号：1.0
  */
-package com.csdj.crmproject.crmproject.entity;
+package com.csdj.crmproject.crmproject.entity.salesmanagement;
 
 /**
  * @author 易富军
