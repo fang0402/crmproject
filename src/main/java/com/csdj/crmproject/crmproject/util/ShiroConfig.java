@@ -62,6 +62,7 @@ public class ShiroConfig {
         Map<String, String> filterMap = new LinkedHashMap<String, String>();
 		filterMap.put("/skipLogin", "anon");
         filterMap.put("/skipMain", "authc");
+        filterMap.put("/selShow","authc");
         //filterMap.put("/skip", "anon");
         filterMap.put("/skip404", "anon");
         //修改调整的登录页面
