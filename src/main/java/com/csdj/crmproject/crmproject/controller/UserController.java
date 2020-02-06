@@ -27,10 +27,10 @@ public class UserController {
         return "login";
     }
 
-    /*@RequestMapping("/skip")
+    @RequestMapping("/skip")
     public String skip(){
-        return "fenp";
-    }*/
+        return "fen";
+    }
 
     @RequestMapping("/skip404")
     public String skip404(){
@@ -67,7 +67,7 @@ public class UserController {
         } catch (IncorrectCredentialsException e) {
             //e.printStackTrace();
             //登录失败:密码错误
-            return "0";
+            return "2";
         }
     }
 }
