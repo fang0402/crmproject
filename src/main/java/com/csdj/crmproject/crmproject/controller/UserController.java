@@ -27,6 +27,16 @@ public class UserController {
         return "login";
     }
 
+    /*@RequestMapping("/skip")
+    public String skip(){
+        return "fenp";
+    }*/
+
+    @RequestMapping("/skip404")
+    public String skip404(){
+        return "404";
+    }
+
     @RequestMapping("/skipMain")
     public String skipMain(){
         return "index";
