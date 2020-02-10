@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>业务员销售仪表盘</title>
+    <link rel="stylesheet" th:href="@{./../static/lib/layui/css/layui.css}">
+    <script type="text/javascript" th:src="@{./../static/js/echarts.min.js}"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script th:src="@{./../static/lib/layui/layui.js}" charset="utf-8"></script>
+    <style type="text/css">
+        #mainDiv {
+            height: 780px;
+            width: 98%;
+            position: absolute;
+        }
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-fluid layui-form" id="mainDiv">
+    <div class="layui-row" style="margin-top: 5px;">
+        <div class="layui-col-sm4">&nbsp;</div>
+        <div class="layui-col-sm2" >
+            <div class="layui-input-block" style="width: 100px;position: relative;left: 45px;">
+                <label for="userId"></label>
+                <select name="userId" id="userId" lay-verify="required">
+                    <option value='1'>admin</option>
+                    <option value='2'>admin11</option>
+                </select>
+            </div>
+        </div>
+        <div class="layui-col-sm4">
+            <span style="font-size: 25px;">销售仪表盘</span>
+        </div>
+        <div class="layui-col-sm2">&nbsp;</div>
+    </div>
+    <div class="layui-row" style="height:30%;">
+        <div class="layui-col-sm6" style="height:100%;padding-right:3px;border-right:3px solid #94A0B2;">
+            <div class="layui-row" style="height:10%;padding:0 5px 5px 5px;">
+                <div class="layui-col-sm12" style="height:100%;text-align:left;color:#48b;font-weight:bold;">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" style="color:black;font-size:15px;padding-right:15px;">销售业绩</label>
+                        <div class="layui-input-block">
+                            <input type="radio" name="sex" value="1" title="订单+合同" checked>
+                            <input type="radio" name="sex" value="2" title="订单">
+                            <input type="radio" name="sex" value="3" title="合同">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row" style="height:80%;padding:5px 0 5px 5px;">
+            <div id="assigned1" class="layui-col-sm4" style="height:100%;">
+
+            </div>
+            <div id="assigned2" class="layui-col-sm4" style="height:100%;">
+
+            </div>
+            <div id="assigned3" class="layui-col-sm4" style="height:100%;">
+
+            </div>
+        </div>
+            <div class="layui-row" style="height:10%;padding:0 5px 10px 0;">
+                <div class="layui-col-sm4" style="height:100%;text-align:center;color:black;font-size:12px;">
+                    本月签约完成率
+                </div>
+                <div class="layui-col-sm4" style="height:100%;text-align:center;color:black;font-size:12px;">
+                    本季签约完成率
+                </div>
+                <div class="layui-col-sm4" style="height:100%;text-align:center;color:black;font-size:12px;">
+                    本年签约完成率
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm6" style="height:100%;border-left:3px solid #94A0B2;">
+            <div class="layui-row" style="height:10%;padding-bottom:5px;">
+                <div class="layui-col-sm12" style="height:100%;text-align:right;color:#48b;font-weight:bold;">
+                    <span style="color:black;font-size:15px;">回款业绩</span>
+                </div>
+            </div>
+            <div class="layui-row" style="height:80%;padding:5px 0 5px 5px;">
+                <div id="received1" class="layui-col-sm4" style="height:100%;">
+
+                </div>
+                <div id="received2" class="layui-col-sm4" style="height:100%;">
+
+                </div>
+                <div id="received3" class="layui-col-sm4" style="height:100%;">
+
+                </div>
+            </div>
+            <div class="layui-row" style="height:10%;padding:0 5px 10px 0;">
+                <div class="layui-col-sm4" style="height:100%;text-align:center;color:black;font-size:12px;">
+                    本月签约完成率
+                </div>
+                <div class="layui-col-sm4" style="height:100%;text-align:center;color:black;font-size:12px;">
+                    本季签约完成率
+                </div>
+                <div class="layui-col-sm4" style="height:100%;text-align:center;color:black;font-size:12px;">
+                    本年签约完成率
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-row" style="height:30%;padding:0 0 0 0;border-bottom:6px solid #94A0B2;">
+        <div id="assigned_annual" class="layui-col-sm6" style="height:100%;padding:5px 5px 5px 5px;border-right:3px solid #94A0B2;">
+
+        </div>
+        <div id="received_annual" class="layui-col-sm6" style="height:100%;padding:5px 5px 5px 5px;border-left:3px solid #94A0B2;">
+
+        </div>
+    </div>
+    <div class="layui-row" style="height:30%;">
+        <div id="funnel1" class="layui-col-sm4" style="height:100%;padding:5px 5px 5px 5px;border-right:3px solid #94A0B2;">
+
+        </div>
+        <div id="diligence_annual" class="layui-col-sm8" style="height:100%;padding:5px 5px 5px 5px;border-left:3px solid #94A0B2;">
+
+        </div>
+    </div>
+</div>
+<div id="a"></div>
+
+</body>
+<script type="text/javascript">
+    layui.use(['form', 'laydate'], function () {
+        const form = layui.form, laydate = layui.laydate;
+    });
+</script>
+<script type="text/javascript">
+    // function uploadSel(){
+    //     $.ajax({
+    //         url: '../paper/findStuClass',
+    //         dataType: 'json',
+    //         data:{'state': 0},	//查询状态为正常的所有机构类型
+    //         type: 'post',
+    //         success: function (data) {
+    //             $.each(data.data, function (index, user) {
+    //                 //$('#temp').append(new Option(item.name, item.id));// 下拉菜单里添加元素
+    //                 let txt2=$("<option value='"+user.pkUserId+"'></option>").text(user.userName);
+    //                 $('#userId').append(txt2);
+    //             });
+    //             layui.form.render("select");
+    //         }
+    //     });
+    // }
+    /**
+     * 销售业绩
+     */
+    function showInstrumentPanelSale1(){
+        let dom = document.getElementById("assigned1");
+        let myChart = echarts.init(dom);
+        let option = null;
+        option = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    radius:	"95%",
+                    detail: {formatter: '{value}%'},
+                    data: [{value: 50, name: '完成率'}]
+                }
+            ]
+        };
+
+        setInterval(function () {
+            option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option, true);
+        },2000);
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+    function showInstrumentPanelSale2(){
+        let dom = document.getElementById("assigned2");
+        let myChart = echarts.init(dom);
+        let option = null;
+        option = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    radius:	"95%",
+                    detail: {formatter: '{value}%'},
+                    data: [{value: 50, name: '完成率'}]
+                }
+            ]
+        };
+
+        setInterval(function () {
+            option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option, true);
+        },2000);
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+    function showInstrumentPanelSale3(){
+        let dom = document.getElementById("assigned3");
+        let myChart = echarts.init(dom);
+        let option = null;
+        option = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    radius:	"95%",
+                    detail: {formatter: '{value}%'},
+                    data: [{value: 50, name: '完成率'}]
+                }
+            ]
+        };
+        setInterval(function () {
+            option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option, true);
+        },2000);
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+
+    function showHistogramSale() {
+        let dom = document.getElementById("assigned_annual");
+        let myChart = echarts.init(dom);
+        let app = {};
+        let option = null;
+        let posList = [
+            'left', 'right', 'top', 'bottom',
+            'inside',
+            'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+            'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+        ];
+
+        app.configParameters = {
+            rotate: {
+                min: -90,
+                max: 90
+            },
+            align: {
+                options: {
+                    left: 'left',
+                    center: 'center',
+                    right: 'right'
+                }
+            },
+            verticalAlign: {
+                options: {
+                    top: 'top',
+                    middle: 'middle',
+                    bottom: 'bottom'
+                }
+            },
+            position: {
+                options: echarts.util.reduce(posList, function (map, pos) {
+                    map[pos] = pos;
+                    return map;
+                }, {})
+            },
+            distance: {
+                min: 0,
+                max: 100
+            }
+        };
+
+        app.config = {
+            rotate: 90,
+            align: 'left',
+            verticalAlign: 'middle',
+            position: 'insideBottom',
+            distance: 15,
+            onChange: function () {
+                var labelOption = {
+                    normal: {
+                        rotate: app.config.rotate,
+                        align: app.config.align,
+                        verticalAlign: app.config.verticalAlign,
+                        position: app.config.position,
+                        distance: app.config.distance
+                    }
+                };
+                myChart.setOption({
+                    series: [{
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }]
+                });
+            }
+        };
+
+
+        let labelOption = {
+            show: true,
+            position: app.config.position,
+            distance: app.config.distance,
+            align: app.config.align,
+            verticalAlign: app.config.verticalAlign,
+            rotate: app.config.rotate,
+            formatter: '{c}  {name|{a}}',
+            fontSize: 16,
+            rich: {
+                name: {
+                    textBorderColor: '#fff'
+                }
+            }
+        };
+
+        option = {
+            color: ['#003366', '#006699'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['Forest', 'Steppe']
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    mark: {show: true},
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {show: false},
+                    data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: 'Forest',
+                    type: 'bar',
+                    barGap: 0,
+                    label: labelOption,
+                    data: [320, 332, 301, 334, 390]
+                },
+                {
+                    name: 'Steppe',
+                    type: 'bar',
+                    label: labelOption,
+                    data: [220, 182, 191, 234, 290]
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+    /**
+     * 回顾业绩
+     */
+    function showInstrumentPanelRec1(){
+        let dom = document.getElementById("received1");
+        let myChart = echarts.init(dom);
+        let option = null;
+        option = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    radius:	"95%",
+                    detail: {formatter: '{value}%'},
+                    data: [{value: 50, name: '完成率'}]
+                }
+            ]
+        };
+
+        setInterval(function () {
+            option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option, true);
+        },2000);
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+    function showInstrumentPanelRec2(){
+        let dom = document.getElementById("received2");
+        let myChart = echarts.init(dom);
+        let option = null;
+        option = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    radius:	"95%",
+                    detail: {formatter: '{value}%'},
+                    data: [{value: 50, name: '完成率'}]
+                }
+            ]
+        };
+
+        setInterval(function () {
+            option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option, true);
+        },2000);
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+    function showInstrumentPanelRec3(){
+        let dom = document.getElementById("received3");
+        let myChart = echarts.init(dom);
+        let option = null;
+        option = {
+            tooltip: {
+                formatter: '{a} <br/>{b} : {c}%'
+            },
+            series: [
+                {
+                    name: '业务指标',
+                    type: 'gauge',
+                    radius:	"95%",
+                    detail: {formatter: '{value}%'},
+                    data: [{value: 50, name: '完成率'}]
+                }
+            ]
+        };
+
+        setInterval(function () {
+            option.series[0].data[0].value = (Math.random() * 100).toFixed(2) - 0;
+            myChart.setOption(option, true);
+        },2000);
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+    function showHistogramRec() {
+        let dom = document.getElementById("received_annual");
+        let myChart = echarts.init(dom);
+        let app = {};
+        let option = null;
+        let posList = [
+            'left', 'right', 'top', 'bottom',
+            'inside',
+            'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+            'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+        ];
+
+        app.configParameters = {
+            rotate: {
+                min: -90,
+                max: 90
+            },
+            align: {
+                options: {
+                    left: 'left',
+                    center: 'center',
+                    right: 'right'
+                }
+            },
+            verticalAlign: {
+                options: {
+                    top: 'top',
+                    middle: 'middle',
+                    bottom: 'bottom'
+                }
+            },
+            position: {
+                options: echarts.util.reduce(posList, function (map, pos) {
+                    map[pos] = pos;
+                    return map;
+                }, {})
+            },
+            distance: {
+                min: 0,
+                max: 100
+            }
+        };
+
+        app.config = {
+            rotate: 90,
+            align: 'left',
+            verticalAlign: 'middle',
+            position: 'insideBottom',
+            distance: 15,
+            onChange: function () {
+                var labelOption = {
+                    normal: {
+                        rotate: app.config.rotate,
+                        align: app.config.align,
+                        verticalAlign: app.config.verticalAlign,
+                        position: app.config.position,
+                        distance: app.config.distance
+                    }
+                };
+                myChart.setOption({
+                    series: [{
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }]
+                });
+            }
+        };
+
+
+        let labelOption = {
+            show: true,
+            position: app.config.position,
+            distance: app.config.distance,
+            align: app.config.align,
+            verticalAlign: app.config.verticalAlign,
+            rotate: app.config.rotate,
+            formatter: '{c}  {name|{a}}',
+            fontSize: 16,
+            rich: {
+                name: {
+                    textBorderColor: '#fff'
+                }
+            }
+        };
+
+        option = {
+            color: ['#003366', '#006699'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['Forest', 'Steppe']
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    mark: {show: true},
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {show: false},
+                    data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: 'Forest',
+                    type: 'bar',
+                    barGap: 0,
+                    label: labelOption,
+                    data: [320, 332, 301, 334, 390]
+                },
+                {
+                    name: 'Steppe',
+                    type: 'bar',
+                    label: labelOption,
+                    data: [220, 182, 191, 234, 290]
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+
+    /**
+     *销售预测
+     */
+    function showSaleForecasting(){
+        let dom = document.getElementById("funnel1");
+        let myChart = echarts.init(dom);
+        let option = null;
+        option = {
+            title: {
+                text: '预测',
+                subtext: '销售预测：1000元，利润预测：1000元'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b} : {c}%"
+            },
+            toolbox: {
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            legend: {
+                data: ['展现','点击','访问','咨询','订单']
+            },
+
+            series: [
+                {
+                    name:'漏斗图',
+                    type:'funnel',
+                    left: '10%',
+                    top: 60,
+                    //x2: 80,
+                    bottom: 60,
+                    width: '80%',
+                    // height: {totalHeight} - y - y2,
+                    min: 0,
+                    max: 100,
+                    minSize: '0%',
+                    maxSize: '100%',
+                    sort: 'descending',
+                    gap: 2,
+                    label: {
+                        show: true,
+                        position: 'inside'
+                    },
+                    labelLine: {
+                        length: 10,
+                        lineStyle: {
+                            width: 1,
+                            type: 'solid'
+                        }
+                    },
+                    itemStyle: {
+                        borderColor: '#fff',
+                        borderWidth: 1
+                    },
+                    emphasis: {
+                        label: {
+                            fontSize: 20
+                        }
+                    },
+                    data: [
+                        {value: 60, name: '访问'},
+                        {value: 40, name: '咨询'},
+                        {value: 20, name: '订单'},
+                        {value: 80, name: '点击'},
+                        {value: 100, name: '展现'}
+                    ]
+                }
+            ]
+        };
+
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+
+    /**
+     * 每月销售勤奋度
+     */
+    function showSaleDiligent(){
+        let dom = document.getElementById("diligence_annual");
+        let myChart = echarts.init(dom);
+        let app = {};
+        let option = null;
+        let posList = [
+            'left', 'right', 'top', 'bottom',
+            'inside',
+            'insideTop', 'insideLeft', 'insideRight', 'insideBottom',
+            'insideTopLeft', 'insideTopRight', 'insideBottomLeft', 'insideBottomRight'
+        ];
+
+        app.configParameters = {
+            rotate: {
+                min: -90,
+                max: 90
+            },
+            align: {
+                options: {
+                    left: 'left',
+                    center: 'center',
+                    right: 'right'
+                }
+            },
+            verticalAlign: {
+                options: {
+                    top: 'top',
+                    middle: 'middle',
+                    bottom: 'bottom'
+                }
+            },
+            position: {
+                options: echarts.util.reduce(posList, function (map, pos) {
+                    map[pos] = pos;
+                    return map;
+                }, {})
+            },
+            distance: {
+                min: 0,
+                max: 100
+            }
+        };
+
+        app.config = {
+            rotate: 90,
+            align: 'left',
+            verticalAlign: 'middle',
+            position: 'insideBottom',
+            distance: 15,
+            onChange: function () {
+                var labelOption = {
+                    normal: {
+                        rotate: app.config.rotate,
+                        align: app.config.align,
+                        verticalAlign: app.config.verticalAlign,
+                        position: app.config.position,
+                        distance: app.config.distance
+                    }
+                };
+                myChart.setOption({
+                    series: [{
+                        label: labelOption
+                    }, {
+                        label: labelOption
+                    }]
+                });
+            }
+        };
+
+
+        let labelOption = {
+            show: true,
+            position: app.config.position,
+            distance: app.config.distance,
+            align: app.config.align,
+            verticalAlign: app.config.verticalAlign,
+            rotate: app.config.rotate,
+            formatter: '{c}  {name|{a}}',
+            fontSize: 16,
+            rich: {
+                name: {
+                    textBorderColor: '#fff'
+                }
+            }
+        };
+
+        option = {
+            title: {
+                text: '每月销售勤奋度'
+            },
+            color: ['#003366', '#006699'],
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'shadow'
+                }
+            },
+            legend: {
+                data: ['Forest', 'Steppe']
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    mark: {show: true},
+                    dataView: {show: true, readOnly: false},
+                    magicType: {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+                    restore: {show: true},
+                    saveAsImage: {show: true}
+                }
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    axisTick: {show: false},
+                    data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: 'Forest',
+                    type: 'bar',
+                    barGap: 0,
+                    label: labelOption,
+                    data: [320, 332, 301, 334, 390]
+                },
+                {
+                    name: 'Steppe',
+                    type: 'bar',
+                    label: labelOption,
+                    data: [220, 182, 191, 234, 290]
+                }
+
+            ]
+        };
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    }
+    $(document).ready(function () {
+        showInstrumentPanelSale1();
+        showInstrumentPanelSale2();
+        showInstrumentPanelSale3();
+        showInstrumentPanelRec1();
+        showInstrumentPanelRec2();
+        showInstrumentPanelRec3();
+        showHistogramSale();
+        showHistogramRec();
+        showSaleForecasting();
+        showSaleDiligent();
+        //uploadSel();
+    });
+</script>
+</html>
