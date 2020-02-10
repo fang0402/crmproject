@@ -38,29 +38,32 @@
         $(function  () {
             layui.use('form', function(){
               var form = layui.form;
-              // layer.msg('玩命卖萌中', function(){
-              //   //关闭后的操作
-              //   });
               //监听提交
               form.on('submit(login)', function(data){
                   var name=$("#userName").val();
                   var pwd=$("#password").val();
-                  $.ajax({
-                      url:"/crmproject/login",
-                      type:"post",
-                      dataType:"text",
-                      data:{
-                          "name":name,
-                          "password":pwd
-                      },
-                      success:function (msg) {
-                          if (msg.indexOf("1")>-1){
-                              open("/crmproject/skipMain","_self");
-                          }else{
-                              open("/crmproject/skipLogin","_self");
+                      $.ajax({
+                          url: "/crmproject/login",
+                          type: "post",
+                          dataType: "text",
+                          data: {
+                              "name": name,
+                              "password": pwd
+                          },
+                          success: function (msg) {
+                              if (msg.indexOf("1") > -1) {
+                                  open("/crmproject/skipMain", "_self");
+                              } else if (msg.indexOf("0") > -1) {
+                                  layer.msg('用户不存在', function () {
+                                      open("/crmproject/skipLogin", "_self");
+                                  });
+                              } else if (msg.indexOf("2") > -1) {
+                                  layer.msg('密码错误', function () {
+                                      open("/crmproject/skipLogin", "_self");
+                                  });
+                              }
                           }
-                      }
-                  });
+                      });
                 return false;
               });
             });

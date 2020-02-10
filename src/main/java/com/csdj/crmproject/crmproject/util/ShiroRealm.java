@@ -8,7 +8,12 @@ import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -53,6 +58,10 @@ public class ShiroRealm extends AuthorizingRealm {
         if (user == null) {
             throw new UnknownAccountException("用户不存在!");
         }
+        ServletRequestAttributes requestAttributes= (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request=requestAttributes.getRequest();
+        HttpSession session =request.getSession();
+        session.setAttribute("user", user);
         //以下信息是从数据库中获职的。
         //1). principal:认证的实体信息。 可以是 username,也可以是 数据表对应的用户的实体类对象。
         User principal = user;

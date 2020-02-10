@@ -15,6 +15,16 @@ spring:
     url: jdbc:mysql://115.28.209.241/crmproject?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: crmproject
     password: 123456
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
+    timeout: 0
 mybatis:
   mapper-locations: /mapper/**.xml
   type-aliases-package: com.csdj.crmproject.crmproject.entity
