@@ -139,7 +139,33 @@ public class Salesopp {
    * 修改时间
    */
   private String salesoppGmtModified;
+  private String sa;
+  private String sb;
+  private String sc;
 
+  public String getSa() {
+    return sa;
+  }
+
+  public void setSa(String sa) {
+    this.sa = sa;
+  }
+
+  public String getSb() {
+    return sb;
+  }
+
+  public void setSb(String sb) {
+    this.sb = sb;
+  }
+
+  public String getSc() {
+    return sc;
+  }
+
+  public void setSc(String sc) {
+    this.sc = sc;
+  }
 
   public long getPkSalesoppId() {
     return pkSalesoppId;
