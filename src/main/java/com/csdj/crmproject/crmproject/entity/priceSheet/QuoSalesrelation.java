@@ -3,7 +3,7 @@
  * 版权(c) 雷升公司 CRM项目组：
  * 版 本 号：1.0
  */
-package com.csdj.crmproject.crmproject.priceSheet.entity;
+package com.csdj.crmproject.crmproject.entity.priceSheet;
 
 
 /**
