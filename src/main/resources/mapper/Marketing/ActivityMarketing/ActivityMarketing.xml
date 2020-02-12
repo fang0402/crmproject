@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csdj.crmproject.crmproject.dao.Marketing.ActivityMarketing.ActivityMarketingDao">
+
+    <select id="activity" resultType="list">
+    SELECT `activity_name` AS 活动名称 ,`fk_user_id` AS 负责人,`activity_type` AS 类型,
+`activity_budget` AS 预算,
+`activity_actual_number` AS 实际参加人数,`activity_planned_start_date`  AS 计划开始时间,`activity_planned_end_date`  AS 计划结束时间,
+`activity_approval_process`  AS 审批状态,
+`activity_circulation_date`  AS 流转时间,`activity_approval_result`  AS 审批结果,`activity_founder`  AS 创建人,
+`activity_gmt_create`  AS 创建时间  FROM `market_activity`
+
+    </select>
+
+
+</mapper>

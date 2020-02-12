@@ -62,6 +62,7 @@ public class ShiroConfig {
          *       logout登出
          */
         Map<String, String> filterMap = new LinkedHashMap<String, String>();
+        filterMap.put("/marketing", "anon");
 		filterMap.put("/skipLogin", "anon");
         filterMap.put("/login", "anon");
         filterMap.put("/skip", "anon");

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>市场活动模块</title>
+    <script type="text/javascript" th:src="@{../bots335/js/jquery-2.1.1.js}"></script>
+</head>
+<body>
+<div>
+    <table class="table table-hover table-bordered table-condensed"  border="1" cellspacing="0" style="">
+        <thead>
+        <tr aria-colspan="12"> <td colspan="4"><a href="/showaddFlow" >添加</a>
+            <a href="/showaddFlow" >添加</a>
+             <a href="/showaddFlow" >添加</a>
+            <a href="/showaddFlow" >添加</a></td></tr>
+        <tr>
+            <td>活动名称 </td>
+            <td>负责人</td>
+            <td>类型</td>
+            <td>预算</td>
+            <td>实际参加人数</td>
+            <td>计划开始时间</td>
+            <td>计划结束时间</td>
+            <td>审批状态</td>
+            <td>流转时间</td>
+            <td>审批结果</td>
+            <td>创建人</td>
+            <td>创建时间</td>
+        </tr>
+        </thead>
+        <tbody id="a">
+
+        </tbody>
+    </table>
+
+</div>
+
+<script type="text/javascript" >
+    $("document").ready(function(){
+        $.ajax({
+            type:"post",
+            url:"/listrcvbl",
+            dataType:"json",
+            data:{
+            },
+            success:function(data){
+                var h="";
+                $.each(data,function(a,b){
+                    h=h+"<tr>";
+                    h=h+"<td>"+b.activityName+"</td>";
+                    h=h+"<td>"+b.activityHead+"</td>";
+                    h=h+"<td>"+b.activityType+"</td>";
+                    h=h+"<td>"+b.activityBudget+"</td>";
+                    h=h+"<td>"+b.activityActualNumber+"</td>";
+                    h=h+"<td>"+b.activityPlannedStartdate+"</td>";
+                    h=h+"<td>"+b.activityPlannedEnddate+"</td>";
+                    h=h+"<td>"+b.activityApprovalProcess+"</td>";
+                    h=h+"<td>"+b.activityCirculationdate+"</td>";
+                    h=h+"<td>"+b.activityApprovalResult+"</td>";
+                    h=h+"<td>"+b.activityFounder+"</td>";
+                    h=h+"<td>"+b.activityGmtCreate+"</td>";
+                    h=h+"<tr>";
+                });
+                $("#a").html(h);
+            },
+            error:function(){
+                alert('错误！');
+            }
+        });
+    });
+</script>
+</body>
+</html>
