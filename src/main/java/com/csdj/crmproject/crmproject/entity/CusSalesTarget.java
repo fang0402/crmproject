@@ -66,6 +66,7 @@ public class CusSalesTarget {
     this.cusSalesTarLastModifier = cusSalesTarLastModifier;
     this.fkUserId = fkUserId;
   }
+
   /**
    * 业务员销售目标id
    */

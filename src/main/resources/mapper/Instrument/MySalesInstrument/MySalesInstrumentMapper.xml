@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.crmproject.crmproject.dao.Instrument.MySalesInstrument.MySalesInstrumentMapper">
+
+    <select id="getOrder" resultType="CusSalesTarget">
+        SELECT
+           `pk_cus_sales_target_id` pkCusSalesTargetId,
+          `fk_user_business_id` fkUserBusinessId,
+          `cus_sales_target_year` cusSalesTargetYear,
+          `sales_target_type` salesTargetType,
+          `cus_sales_tar_january` cusSalesTarJanuary,
+          `cus_sales_tar_february` cusSalesTarFebruary,
+          `cus_sales_tar_march` cusSalesTarMarch,
+          `cus_sales_tar_april` cusSalesTarApril,
+          `cus_sales_tar_may` cusSalesTarMay,
+          `cus_sales_tar_jun` cusSalesTarJun,
+          `cus_sales_tar_july` cusSalesTarJuly,
+          `cus_sales_tar_august` cusSalesTarAugust,
+          `cus_sales_tar_september` cusSalesTarSeptember,
+          `cus_sales_tar_october` cusSalesTarOctober,
+          `cus_sales_tar_november` cusSalesTarNovember,
+          `cus_sales_tar_december` cusSalesTarDecember,
+          `cus_sales_tar_gmt_create` cusSalesTarGmtCreate,
+          `cus_sales_tar_gmt_modified` cusSalesTarGmtModified,
+          `fk_user_Upd_id` fkUserId
+         FROM cus_sales_target WHERE fk_user_business_id = #{0} and cus_sales_target_year = #{1}
+    </select>
+
+    <select id="dianasOrder" resultType="Map">
+        SELECT order_id,SUM(order_Amount_remitted) order_Amount_remitted FROM `order` WHERE DATE_FORMAT( gmt_create, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
+        AND fk_user_id = #{userId}
+        GROUP BY order_id
+    </select>
+
+    <select id="seasonOrder" resultType="Map">
+       SELECT order_id,SUM(order_Amount_remitted) order_Amount_remitted FROM `order`  WHERE QUARTER(gmt_create)=QUARTER(NOW())
+        AND fk_user_id = #{userId}
+        GROUP BY order_id
+    </select>
+
+    <select id="yearOrder" resultType="Map">
+      SELECT order_id,SUM(order_Amount_remitted) order_Amount_remitted FROM `order` WHERE YEAR(gmt_create)=YEAR(NOW())
+        AND fk_user_id = #{userId}
+        GROUP BY order_id
+    </select>
+
+    <select id="order" resultType="Map">
+        SELECT t1.a t1,t2.a t2,t3.a t3,t4.a t4,t5.a t5,t6.a t6,t7.a t7,t8.a t8,t9.a t9,t10.a t10,
+        t11.a t11,t12.a t12 FROM
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=1 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t1,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=2 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t2,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=3 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t3,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=4 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t4,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=5 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t5,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=6 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t6,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=7 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t7,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=8 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t8,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=9 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t9,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=10 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t10,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=11 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t11,
+        (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=12 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t12
+
+    </select>
+
+    <select id="dianasContract" resultType="Map">
+      SELECT pk_contract_id,SUM(contract_saleroom) FROM `contract` WHERE DATE_FORMAT( gmt_create, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
+        AND fk_user_id = #{userId}
+        GROUP BY pk_contract_id
+    </select>
+
+    <select id="seasonContract" resultType="Map">
+         SELECT pk_contract_id,SUM(contract_saleroom) FROM `contract`  WHERE QUARTER(gmt_create)=QUARTER(NOW())
+            AND fk_user_id = #{userId}
+            GROUP BY pk_contract_id
+
+    </select>
+
+    <select id="yearContract" resultType="Map">
+        SELECT pk_contract_id,SUM(contract_saleroom) FROM `contract` WHERE YEAR(gmt_create)=YEAR(NOW())
+        AND fk_user_id = #{userId}
+        GROUP BY pk_contract_id
+    </select>
+
+
+
+</mapper>
