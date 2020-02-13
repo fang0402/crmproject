@@ -1,0 +1,1 @@
+package com.csdj.crmproject.crmproject.dao.Sales.ProductClassificationManage;/** * @author 易富军 * @version 1.0 * @date 2020/02/12 上午 10:36 * @description: 产品分类管理 */public interface ProductClassificationManageMapper {}

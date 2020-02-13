@@ -1,0 +1,1 @@
+package com.csdj.crmproject.crmproject.dao.Sales.PaymentRecords;/** * @author 易富军 * @version 1.0 * @date 2020/02/12 上午 10:36 * @description: 收款记录 */public interface PaymentRecordsMapper {}
