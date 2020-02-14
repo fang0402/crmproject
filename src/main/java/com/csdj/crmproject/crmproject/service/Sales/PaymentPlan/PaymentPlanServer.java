@@ -1,0 +1,1 @@
+package com.csdj.crmproject.crmproject.service.Sales.PaymentPlan;/** * @author 易富军 * @version 1.0 * @date 2020/02/12 上午 10:25 * @description: 收款计划 */public interface PaymentPlanServer {}

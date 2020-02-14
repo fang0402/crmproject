@@ -5,12 +5,14 @@
  */
 package com.csdj.crmproject.crmproject.entity;
 
+import java.io.Serializable;
+
 /**
  * @author 李文霞
  * @version 1.0
  * @date 2019-11-27
  */
-public class User {
+public class User implements Serializable {
   /**
    * Description ：  无参构造函数
    * @param：  无
@@ -128,20 +130,5 @@ public class User {
     this.userGmtModified = userGmtModified;
   }
 
-  /**
-   * 显示数据
-   * @return
-   */
-  @Override
-  public String toString() {
-    return "User{" +
-            "pkUserId=" + pkUserId +
-            ", userName='" + userName + '\'' +
-            ", userPassword='" + userPassword + '\'' +
-            ", fkDepartmentId=" + fkDepartmentId +
-            ", userIdentity='" + userIdentity + '\'' +
-            ", userGmtCreate='" + userGmtCreate + '\'' +
-            ", userGmtModified='" + userGmtModified + '\'' +
-            '}';
-  }
+
 }
