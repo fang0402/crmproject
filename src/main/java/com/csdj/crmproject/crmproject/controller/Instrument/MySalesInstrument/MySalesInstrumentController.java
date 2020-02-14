@@ -33,238 +33,141 @@ public class MySalesInstrumentController {
 
     /**
      * 查询 订单仪表盘
-     * @param id
+     *
      * @param request
      * @return
      */
     @RequestMapping("selOrder")
     @ResponseBody
-    public double selDianaOrder(String id, HttpServletRequest request) {
+    public Map<String, Object> selDianaOrder(HttpServletRequest request) {
         User user = (User) request.getSession().getAttribute("user");
         String userId = Long.toString(user.getPkUserId());
         Calendar date = Calendar.getInstance();
         String year = String.valueOf(date.get(Calendar.YEAR));
         String month = String.valueOf(date.get(Calendar.MONTH) + 1);
         CusSalesTarget cusSalesTarget = mySalesInstrumentService.getOrder(userId, year);
+        Map<String, Object> map = new HashMap<String, Object>();
         //本月销售业绩
-        if ("1".equals(id)) {
-            Map<Object, String> map1 = mySalesInstrumentService.dianasOrder(userId);
-            Object order = map1.get("order_Amount_remitted");
-            if(order.toString()==null){
-                return 0;
-            }
-            double predict = 0;
-            switch (month) {
-                case "1":
-                    predict = cusSalesTarget.getCusSalesTarJanuary();
-                    break;
-                case "2":
-                    predict = cusSalesTarget.getCusSalesTarFebruary();
-                    break;
-                case "3":
-                    predict = cusSalesTarget.getCusSalesTarMarch();
-                    break;
-                case "4":
-                    predict = cusSalesTarget.getCusSalesTarApril();
-                    break;
-                case "5":
-                    predict = cusSalesTarget.getCusSalesTarMay();
-                    break;
-                case "6":
-                    predict = cusSalesTarget.getCusSalesTarJun();
-                    break;
-                case "7":
-                    predict = cusSalesTarget.getCusSalesTarJuly();
-                    break;
-                case "8":
-                    predict = cusSalesTarget.getCusSalesTarAugust();
-                    break;
-                case "9":
-                    predict = cusSalesTarget.getCusSalesTarSeptember();
-                    break;
-                case "10":
-                    predict = cusSalesTarget.getCusSalesTarOctober();
-                    break;
-                case "11":
-                    predict = cusSalesTarget.getCusSalesTarNovember();
-                    break;
-                case "12":
-                    predict = cusSalesTarget.getCusSalesTarDecember();
-                    break;
-            }
-            double i = Double.parseDouble(order.toString()) / predict * 100;
-            return i > 100 ? 100 : fun(i);
-            //本季销售业绩
-        } else if ("2".equals(id)) {
-            int month1 = date.get(Calendar.MONTH) + 1;
-            Map<Object, String> map1 = mySalesInstrumentService.seasonOrder(userId);
-            Object order = map1.get("order_Amount_remitted");
-            if(order.toString()==null){
-                return 0;
-            }
-            double predict = 0;
-            if (month1 <= 3) {
-                predict = cusSalesTarget.getCusSalesTarJanuary() + cusSalesTarget.getCusSalesTarFebruary() + cusSalesTarget.getCusSalesTarMarch();
-            }
-            if (month1 >= 4 && month1 <= 6) {
-                predict = cusSalesTarget.getCusSalesTarApril() + cusSalesTarget.getCusSalesTarMay() + cusSalesTarget.getCusSalesTarJun();
-            }
-            if (month1 >= 7 && month1 <= 9) {
-                predict = cusSalesTarget.getCusSalesTarJuly() + cusSalesTarget.getCusSalesTarAugust() + cusSalesTarget.getCusSalesTarSeptember();
-            }
-            if (month1 >= 10 && month1 <= 12) {
-                predict = cusSalesTarget.getCusSalesTarOctober() + cusSalesTarget.getCusSalesTarNovember() + cusSalesTarget.getCusSalesTarDecember();
-            }
-            double i = Double.parseDouble(order.toString()) / predict * 100;
-            return i > 100 ? 100 :fun(i);
-            //本年销售业绩
-        } else {
-            Map<Object, String> map1 = mySalesInstrumentService.yearOrder(userId);
-            Object order = map1.get("order_Amount_remitted");
-            double predict = 0;
-            if(order.toString()==null){
-                return 0;
-            }
-            predict = cusSalesTarget.getCusSalesTarJanuary() + cusSalesTarget.getCusSalesTarFebruary() + cusSalesTarget.getCusSalesTarMarch() +
-                    cusSalesTarget.getCusSalesTarApril() + cusSalesTarget.getCusSalesTarMay() + cusSalesTarget.getCusSalesTarJun() +
-                    cusSalesTarget.getCusSalesTarJuly() + cusSalesTarget.getCusSalesTarAugust() + cusSalesTarget.getCusSalesTarSeptember() +
-                    cusSalesTarget.getCusSalesTarOctober() + cusSalesTarget.getCusSalesTarNovember() + cusSalesTarget.getCusSalesTarDecember();
-            double i = Double.parseDouble(order.toString()) / predict * 100;
-            return i > 100 ? 100 : fun(i);
+        Map<Object, String> map1 = mySalesInstrumentService.dianasOrder(userId);
+        Object order = map1.get("order_Amount_remitted");
+        Map<Object, String> map11 = mySalesInstrumentService.dianasContract(userId);
+        Object order11 = map11.get("contract_saleroom");
+
+        double predict = 0;
+        switch (month) {
+            case "1":
+                predict = cusSalesTarget.getCusSalesTarJanuary();
+                break;
+            case "2":
+                predict = cusSalesTarget.getCusSalesTarFebruary();
+                break;
+            case "3":
+                predict = cusSalesTarget.getCusSalesTarMarch();
+                break;
+            case "4":
+                predict = cusSalesTarget.getCusSalesTarApril();
+                break;
+            case "5":
+                predict = cusSalesTarget.getCusSalesTarMay();
+                break;
+            case "6":
+                predict = cusSalesTarget.getCusSalesTarJun();
+                break;
+            case "7":
+                predict = cusSalesTarget.getCusSalesTarJuly();
+                break;
+            case "8":
+                predict = cusSalesTarget.getCusSalesTarAugust();
+                break;
+            case "9":
+                predict = cusSalesTarget.getCusSalesTarSeptember();
+                break;
+            case "10":
+                predict = cusSalesTarget.getCusSalesTarOctober();
+                break;
+            case "11":
+                predict = cusSalesTarget.getCusSalesTarNovember();
+                break;
+            case "12":
+                predict = cusSalesTarget.getCusSalesTarDecember();
+                break;
         }
+        double i = Double.parseDouble(order.toString()) / predict * 100;//订单
+        double i11 = Double.parseDouble(order11.toString()) / predict * 100;//合同
+        //本季销售业绩
+        int month1 = date.get(Calendar.MONTH) + 1;
+        Map<Object, String> map2 = mySalesInstrumentService.seasonOrder(userId);
+        Object order1 = map2.get("order_Amount_remitted");
+
+        Map<Object, String> map22 = mySalesInstrumentService.seasonContract(userId);
+        Object order22 = map22.get("contract_saleroom");
+
+        double predict1 = 0;
+        if (month1 <= 3) {
+            predict1 = cusSalesTarget.getCusSalesTarJanuary() + cusSalesTarget.getCusSalesTarFebruary() + cusSalesTarget.getCusSalesTarMarch();
+        }
+        if (month1 >= 4 && month1 <= 6) {
+            predict1 = cusSalesTarget.getCusSalesTarApril() + cusSalesTarget.getCusSalesTarMay() + cusSalesTarget.getCusSalesTarJun();
+        }
+        if (month1 >= 7 && month1 <= 9) {
+            predict1 = cusSalesTarget.getCusSalesTarJuly() + cusSalesTarget.getCusSalesTarAugust() + cusSalesTarget.getCusSalesTarSeptember();
+        }
+        if (month1 >= 10 && month1 <= 12) {
+            predict1 = cusSalesTarget.getCusSalesTarOctober() + cusSalesTarget.getCusSalesTarNovember() + cusSalesTarget.getCusSalesTarDecember();
+        }
+        double i1 = Double.parseDouble(order1.toString()) / predict1 * 100;
+        double i22 = Double.parseDouble(order22.toString()) / predict1 * 100;
+
+
+        //本年销售业绩
+        Map<Object, String> map3 = mySalesInstrumentService.yearOrder(userId);
+        Object order2 = map3.get("order_Amount_remitted");
+        Map<Object, String> map33 = mySalesInstrumentService.yearContract(userId);
+        Object order33 = map33.get("contract_saleroom");
+        double predict2 = 0;
+        predict2 = cusSalesTarget.getCusSalesTarJanuary() + cusSalesTarget.getCusSalesTarFebruary() + cusSalesTarget.getCusSalesTarMarch() +
+                cusSalesTarget.getCusSalesTarApril() + cusSalesTarget.getCusSalesTarMay() + cusSalesTarget.getCusSalesTarJun() +
+                cusSalesTarget.getCusSalesTarJuly() + cusSalesTarget.getCusSalesTarAugust() + cusSalesTarget.getCusSalesTarSeptember() +
+                cusSalesTarget.getCusSalesTarOctober() + cusSalesTarget.getCusSalesTarNovember() + cusSalesTarget.getCusSalesTarDecember();
+        double i2 = Double.parseDouble(order2.toString()) / predict2 * 100;
+        double i33 = Double.parseDouble(order33.toString()) / predict2 * 100;
+
+        map.put("dianasOrder", i > 100 ? 100 : fun(i));
+        map.put("seasonOrder", i1 > 100 ? 100 : fun(i1));
+        map.put("yearOrder", i2 > 100 ? 100 : fun(i2));
+
+        map.put("dianasContract",i11 > 100 ? 100 : fun(i11));
+        map.put("seasonContract",i22 > 100 ? 100 : fun(i22));
+        map.put("yearContract",i33 > 100 ? 100 : fun(i33));
+        return map;
     }
 
     /**
      * 查询统计图月度订单
-     * @param id
+     *
      * @param request
      * @return
      */
     @RequestMapping("getOrder")
     @ResponseBody
-    public List<Object> getOrder(String id,HttpServletRequest request){
+    public List<Object> getOrder(HttpServletRequest request) {
         User user = (User) request.getSession().getAttribute("user");
         String userId = Long.toString(user.getPkUserId());
-        List<Object> list= new ArrayList<Object>();
-        Map<Object,String> map1=mySalesInstrumentService.order(userId);
+        List<Object> list = new ArrayList<Object>();
         Calendar date = Calendar.getInstance();
         String year = String.valueOf(date.get(Calendar.YEAR));
         CusSalesTarget cusSalesTarget = mySalesInstrumentService.getOrder(userId, year);
-        if("1".equals(id)){
-            list.add(map1);
-            list.add(cusSalesTarget);
-        }else if("2".equals(id)){
-
-        }else{
-
-        }
+        Map<Object, String> map1 = mySalesInstrumentService.order(userId);
+        Map<Object, String> map2 = mySalesInstrumentService.contract(userId);
+        list.add(map1);
+        list.add(cusSalesTarget);
+        list.add(map2);
         return list;
     }
 
-    /**
-     * 查询合同仪表数据
-     * @return
-     */
-    @RequestMapping("selContract")
-    @ResponseBody
-    public double selContract(String id, HttpServletRequest request) {
-        User user = (User) request.getSession().getAttribute("user");
-        String userId = Long.toString(user.getPkUserId());
-        Calendar date = Calendar.getInstance();
-        String year = String.valueOf(date.get(Calendar.YEAR));
-        String month = String.valueOf(date.get(Calendar.MONTH) + 1);
-        CusSalesTarget cusSalesTarget = mySalesInstrumentService.getOrder(userId, year);
-        //本月销售业绩
-        if ("1".equals(id)) {
-            Map<Object, String> map1 = mySalesInstrumentService.dianasContract(userId);
-            Object order = map1.get("contract_saleroom");
-            if(order.toString()==null){
-                return 0;
-            }
-            double predict = 0;
-            switch (month) {
-                case "1":
-                    predict = cusSalesTarget.getCusSalesTarJanuary();
-                    break;
-                case "2":
-                    predict = cusSalesTarget.getCusSalesTarFebruary();
-                    break;
-                case "3":
-                    predict = cusSalesTarget.getCusSalesTarMarch();
-                    break;
-                case "4":
-                    predict = cusSalesTarget.getCusSalesTarApril();
-                    break;
-                case "5":
-                    predict = cusSalesTarget.getCusSalesTarMay();
-                    break;
-                case "6":
-                    predict = cusSalesTarget.getCusSalesTarJun();
-                    break;
-                case "7":
-                    predict = cusSalesTarget.getCusSalesTarJuly();
-                    break;
-                case "8":
-                    predict = cusSalesTarget.getCusSalesTarAugust();
-                    break;
-                case "9":
-                    predict = cusSalesTarget.getCusSalesTarSeptember();
-                    break;
-                case "10":
-                    predict = cusSalesTarget.getCusSalesTarOctober();
-                    break;
-                case "11":
-                    predict = cusSalesTarget.getCusSalesTarNovember();
-                    break;
-                case "12":
-                    predict = cusSalesTarget.getCusSalesTarDecember();
-                    break;
-            }
-            double i = Double.parseDouble(order.toString()) / predict * 100;
-            return i > 100 ? 100 : fun(i);
-            //本季销售业绩
-        } else if ("2".equals(id)) {
-            int month1 = date.get(Calendar.MONTH) + 1;
-            Map<Object, String> map1 = mySalesInstrumentService.seasonContract(userId);
-            Object order = map1.get("contract_saleroom");
-            if(order.toString()==null){
-                return 0;
-            }
-            double predict = 0;
-            if (month1 <= 3) {
-                predict = cusSalesTarget.getCusSalesTarJanuary() + cusSalesTarget.getCusSalesTarFebruary() + cusSalesTarget.getCusSalesTarMarch();
-            }
-            if (month1 >= 4 && month1 <= 6) {
-                predict = cusSalesTarget.getCusSalesTarApril() + cusSalesTarget.getCusSalesTarMay() + cusSalesTarget.getCusSalesTarJun();
-            }
-            if (month1 >= 7 && month1 <= 9) {
-                predict = cusSalesTarget.getCusSalesTarJuly() + cusSalesTarget.getCusSalesTarAugust() + cusSalesTarget.getCusSalesTarSeptember();
-            }
-            if (month1 >= 10 && month1 <= 12) {
-                predict = cusSalesTarget.getCusSalesTarOctober() + cusSalesTarget.getCusSalesTarNovember() + cusSalesTarget.getCusSalesTarDecember();
-            }
-            double i = Double.parseDouble(order.toString()) / predict * 100;
-            return i > 100 ? 100 :fun(i);
-            //本年销售业绩
-        } else {
-            Map<Object, String> map1 = mySalesInstrumentService.yearContract(userId);
-            Object order = map1.get("contract_saleroom");
-            double predict = 0;
-            if(order.toString()==null){
-                return 0;
-            }
-            predict = cusSalesTarget.getCusSalesTarJanuary() + cusSalesTarget.getCusSalesTarFebruary() + cusSalesTarget.getCusSalesTarMarch() +
-                    cusSalesTarget.getCusSalesTarApril() + cusSalesTarget.getCusSalesTarMay() + cusSalesTarget.getCusSalesTarJun() +
-                    cusSalesTarget.getCusSalesTarJuly() + cusSalesTarget.getCusSalesTarAugust() + cusSalesTarget.getCusSalesTarSeptember() +
-                    cusSalesTarget.getCusSalesTarOctober() + cusSalesTarget.getCusSalesTarNovember() + cusSalesTarget.getCusSalesTarDecember();
-            double i = Double.parseDouble(order.toString()) / predict * 100;
-            return i > 100 ? 100 : fun(i);
-        }
-    }
-
 
     /**
-     *使用精确小数BigDecimal
+     * 使用精确小数BigDecimal
      */
     public double fun(double f) {
         BigDecimal bg = new BigDecimal(f);

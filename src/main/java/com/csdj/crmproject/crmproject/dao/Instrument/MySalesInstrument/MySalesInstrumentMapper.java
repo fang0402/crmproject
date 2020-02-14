@@ -43,6 +43,13 @@ public interface MySalesInstrumentMapper {
     Map<Object,String> order(@Param("userId") String userId);
 
     /**
+     * 年度合同完成度
+     * @param userId
+     * @return
+     */
+    Map<Object,String> contract(@Param("userId") String userId);
+
+    /**
      * 本月合同销售业绩
      * @param userId
      * @return

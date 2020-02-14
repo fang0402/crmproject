@@ -41,13 +41,16 @@
                     <div class="layui-form-item" style="margin-bottom: -2px">
                         <label id="sadas" class="layui-form-label" style="font-size: 20px;color: #FFFFFF">销售业绩</label>
                         <div class="layui-input-block" style="color:#4488BB">
-                            <li style="float: left" th:onclick="'javascript:indent()'"><input type="radio" name="hood"
-                                                                                              value="1" title="订单+合同"
-                                                                                              checked></li>
+                            <li style="float: left" th:onclick="'javascript:indentAddcontract()'"><input type="radio"
+                                                                                                         name="hood"
+                                                                                                         value="1"
+                                                                                                         title="订单+合同"
+                                                                                                         checked></li>
                             <li style="float: left" th:onclick="'javascript:indent()'"><input type="radio" name="hood"
                                                                                               value="2" title="订单"></li>
-                            <li style="float: left" th:onclick="'javascript:indent()'"><input type="radio" name="hood"
-                                                                                              value="3" title="合同"></li>
+                            <li style="float: left" th:onclick="'javascript:contract()'"><input type="radio" name="hood"
+                                                                                                value="3" title="合同">
+                            </li>
                         </div>
                     </div>
                 </div>
@@ -138,6 +141,40 @@
 </script>
 <!-- 本月签约完成仪表盘-->
 <script>
+    //获取结果
+    $.ajax({
+        url: "/crmproject/MySalesInstrument/selOrder",
+        type: "post",
+        dataType: "json",
+        data: {},
+        success: function (data) {
+            indentyear = parseFloat(data.yearOrder==null?0:data.yearOrder);
+            indentseason = parseFloat(data.seasonOrder==null?0:data.seasonOrder);
+            indentdianas = parseFloat(data.dianasOrder==null?0:data.dianasOrder);
+            contractyear = parseFloat(data.yearContract==null?0:data.yearContract);
+            contractdianas = parseFloat(data.dianasContract==null?0:data.dianasContract);
+            contractseason = parseFloat(data.seasonContract==null?0:data.seasonContract);
+
+            var a1 = contractdianas + indentdianas > 100 ? 100 : contractdianas + indentdianas;
+            var a2 = contractseason + indentseason > 100 ? 100 : contractseason + indentseason;
+            var a3 = contractyear + indentyear > 100 ? 100 : contractyear + indentyear;
+            myChart.setOption({
+                series: [{
+                    data: [{value: a1, name: '订单+合同'}]
+                }]
+            });
+            myChart1.setOption({
+                series: [{
+                    data: [{value: a2, name: '订单+合同'}]
+                }]
+            });
+            myChart2.setOption({
+                series: [{
+                    data: [{value: a3, name: '订单+合同'}]
+                }]
+            });
+        }
+    });
     //订单仪表盘显示
     function indent() {
         myChart.setOption({
@@ -156,6 +193,13 @@
             }]
         });
         myChartStat.setOption({
+            title: {
+                text: '月度订单额',
+                textStyle: {
+                    color: "#fff",
+
+                }
+            },
             series: [{
                 name: '计划值',
                 type: 'bar',
@@ -200,51 +244,159 @@
         });
     }
 
+    var contractdianas;
+    var contractseason;
+    var contractyear;
+
+    //合同仪表盘
+    function contract() {
+        myChart.setOption({
+            series: [{
+                data: [{value: contractdianas, name: '合同'}]
+            }]
+        });
+        myChart1.setOption({
+            series: [{
+                data: [{value: contractseason, name: '合同'}]
+            }]
+        });
+        myChart2.setOption({
+            series: [{
+                data: [{value: contractyear, name: '合同'}]
+            }]
+        });
+        myChartStat.setOption({
+            title: {
+                text: '月度合同额',
+                textStyle: {
+                    color: "#fff",
+
+                }
+            },
+            series: [{
+                name: '计划值',
+                type: 'bar',
+                data: [myChartStatdata[1].cusSalesTarJanuary,
+                    myChartStatdata[1].cusSalesTarFebruary,
+                    myChartStatdata[1].cusSalesTarMarch,
+                    myChartStatdata[1].cusSalesTarApril,
+                    myChartStatdata[1].cusSalesTarMay,
+                    myChartStatdata[1].cusSalesTarJun,
+                    myChartStatdata[1].cusSalesTarJuly,
+                    myChartStatdata[1].cusSalesTarAugust,
+                    myChartStatdata[1].cusSalesTarSeptember,
+                    myChartStatdata[1].cusSalesTarOctober,
+                    myChartStatdata[1].cusSalesTarNovember,
+                    myChartStatdata[1].cusSalesTarDecember],
+                itemStyle: {   //配置样式，设置每个柱子的颜色
+                    normal: {
+                        color: '#0070A8'
+                    }
+                }
+            }, {
+                name: '完成值',
+                type: 'bar',
+                data: [myChartStatdata[2].t1,
+                    myChartStatdata[2].t2,
+                    myChartStatdata[2].t3,
+                    myChartStatdata[2].t4,
+                    myChartStatdata[2].t5,
+                    myChartStatdata[2].t6,
+                    myChartStatdata[2].t7,
+                    myChartStatdata[2].t8,
+                    myChartStatdata[2].t9,
+                    myChartStatdata[2].t10,
+                    myChartStatdata[2].t11,
+                    myChartStatdata[2].t12],
+                itemStyle: {   //配置样式，设置每个柱子的颜色
+                    normal: {
+                        color: '#E5323E'
+                    }
+                }
+            }]
+        });
+    }
+
     var indentdianas;
     var indentseason;
     var indentyear;
 
-    $.ajax({
-        url: "/crmproject/MySalesInstrument/selContract",
-        type: "post",
-        dataType: "josn",
-        data: {id: 1},
-        success: function (data) {
+    //合同+订单
+    function indentAddcontract() {
+        var a1 = contractdianas + indentdianas > 100 ? 100 : contractdianas + indentdianas;
+        var a2 = contractseason + indentseason > 100 ? 100 : contractseason + indentseason;
+        var a3 = contractyear + indentyear > 100 ? 100 : contractyear + indentyear;
+        myChart.setOption({
+            series: [{
+                data: [{value: a1, name: '订单+合同'}]
+            }]
+        });
+        myChart1.setOption({
+            series: [{
+                data: [{value: a2, name: '订单+合同'}]
+            }]
+        });
+        myChart2.setOption({
+            series: [{
+                data: [{value: a3, name: '订单+合同'}]
+            }]
+        });
+        myChartStat.setOption({
+            title: {
+                text: '月度订单+合同额',
+                textStyle: {
+                    color: "#fff",
 
-        }
-    });
-    $.ajax({
-        url: "/crmproject/MySalesInstrument/selContract",
-        type: "post",
-        dataType: "josn",
-        data: {id: 1},
-        success: function (data) {
-
-        }
-    });
-    $.ajax({
-        url: "/crmproject/MySalesInstrument/selContract",
-        type: "post",
-        dataType: "josn",
-        data: {id: 1},
-        success: function (data) {
-
-        }
-    });
+                }
+            },
+            series: [{
+                name: '计划值',
+                type: 'bar',
+                data: [myChartStatdata[1].cusSalesTarJanuary,
+                    myChartStatdata[1].cusSalesTarFebruary,
+                    myChartStatdata[1].cusSalesTarMarch,
+                    myChartStatdata[1].cusSalesTarApril,
+                    myChartStatdata[1].cusSalesTarMay,
+                    myChartStatdata[1].cusSalesTarJun,
+                    myChartStatdata[1].cusSalesTarJuly,
+                    myChartStatdata[1].cusSalesTarAugust,
+                    myChartStatdata[1].cusSalesTarSeptember,
+                    myChartStatdata[1].cusSalesTarOctober,
+                    myChartStatdata[1].cusSalesTarNovember,
+                    myChartStatdata[1].cusSalesTarDecember],
+                itemStyle: {   //配置样式，设置每个柱子的颜色
+                    normal: {
+                        color: '#0070A8'
+                    }
+                }
+            }, {
+                name: '完成值',
+                type: 'bar',
+                data: [myChartStatdata[0].t1 + myChartStatdata[2].t1,
+                    myChartStatdata[0].t2 + myChartStatdata[2].t2,
+                    myChartStatdata[0].t3 + myChartStatdata[2].t3,
+                    myChartStatdata[0].t4 + myChartStatdata[2].t4,
+                    myChartStatdata[0].t5 + myChartStatdata[2].t5,
+                    myChartStatdata[0].t6 + myChartStatdata[2].t6,
+                    myChartStatdata[0].t7 + myChartStatdata[2].t7,
+                    myChartStatdata[0].t8 + myChartStatdata[2].t8,
+                    myChartStatdata[0].t9 + myChartStatdata[2].t9,
+                    myChartStatdata[0].t10 + myChartStatdata[2].t10,
+                    myChartStatdata[0].t11 + myChartStatdata[2].t11,
+                    myChartStatdata[0].t12 + myChartStatdata[2].t12],
+                itemStyle: {   //配置样式，设置每个柱子的颜色
+                    normal: {
+                        color: '#E5323E'
+                    }
+                }
+            }]
+        });
+    }
 
 
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
     // 指定图表的配置项和数据
-    $.ajax({
-        url: "/crmproject/MySalesInstrument/selOrder",
-        type: "post",
-        dataType: "text",
-        data: {id: 1},
-        success: function (data) {
-            indentdianas = data;
-        }
-    });
 
     myChart.setOption({
         tooltip: {
@@ -308,15 +460,7 @@
     var myChart1 = echarts.init(document.getElementById('main1'));
     // 指定图表的配置项和数据
 
-    $.ajax({
-        url: "/crmproject/MySalesInstrument/selOrder",
-        type: "post",
-        dataType: "text",
-        data: {id: 2},
-        success: function (data) {
-            indentseason = data;
-        }
-    });
+
     myChart1.setOption({
         tooltip: {
             formatter: "{a} <br/>{b} : {c}%"
@@ -377,68 +521,59 @@
 <script type="text/javascript">
     // 基于准备好的dom，初始化echarts实例
     var myChart2 = echarts.init(document.getElementById('main2'));
-    $.ajax({
-        url: "/crmproject/MySalesInstrument/selOrder",
-        type: "post",
-        dataType: "text",
-        data: {id: 3},
-        success: function (data) {
-            indentyear = data;
-        }
-    });
-            // 指定图表的配置项和数据
-            myChart2.setOption({
-                tooltip: {
-                    formatter: "{a} <br/>{b} : {c}%"
-                },
-                toolbox: {
-                    feature: {
-                        restore: {},
-                        saveAsImage: {}
-                    }
-                },
-                series: [{
-                    name: '完成额',
-                    type: 'gauge',
-                    detail: {
-                        offsetCenter: [0, "80%"],    //设置仪表盘下方显示内容位置
-                        formatter: '{value}%',
-                        textStyle: {color: 'white', fontSize: 20, top: 10}
-                    },
-                    title: {               //设置仪表盘中间显示文字样式
-                        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
-                            fontSize: 10,
-                            color: "#4488BB",
-                            fontStyle: 'italic',
-                        }
-                    },
-                    data: [{value: data, name: '订单+合同'}],
-                    center: ["47%", "45%"], // 默认全局居中
-                    splitLine: {           //分割线样式（及10、20等长线样式）
-                        length: 15,
-                        lineStyle: {            // 分隔线样式。
-                            color: "#eee",              //线的颜色,默认 #eee。
-                            opacity: 1,                 //图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形。
-                            width: 2,                   //线度,默认 2。
-                            type: "solid",              //线的类型,默认 solid。 此外还有 dashed,dotted
-                            shadowBlur: 10,             //(发光效果)图形阴影的模糊大小。该属性配合 shadowColor,shadowOffsetX, shadowOffsetY 一起设置图形的阴影效果。
-                            shadowColor: "#fff",        //阴影颜色。支持的格式同color。
-                        }
-                    },
-                    pointer: { //指针样式
-                        length: '80%'
-                    },
-                    axisLine: {
-                        show: true,// 是否显示仪表盘轴线(轮廓线),默认 true。
-                        lineStyle: { // 属性lineStyle控制线条样式
-                            shadowBlur: 10,             //(发光效果)图形阴影的模糊大小。该属性配合 shadowColor,shadowOffsetX, shadowOffsetY 一起设置图形的阴影效果。
-                            shadowColor: "#fff",        //阴影颜色。支持的格式同color。
-                            width: 12//表盘宽度
-                        }
-                    }
-                }]
-            });
 
+    // 指定图表的配置项和数据
+    myChart2.setOption({
+        tooltip: {
+            formatter: "{a} <br/>{b} : {c}%"
+        },
+        toolbox: {
+            feature: {
+                restore: {},
+                saveAsImage: {}
+            }
+        },
+        series: [{
+            name: '完成额',
+            type: 'gauge',
+            detail: {
+                offsetCenter: [0, "80%"],    //设置仪表盘下方显示内容位置
+                formatter: '{value}%',
+                textStyle: {color: 'white', fontSize: 20, top: 10}
+            },
+            title: {               //设置仪表盘中间显示文字样式
+                textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+                    fontSize: 10,
+                    color: "#4488BB",
+                    fontStyle: 'italic',
+                }
+            },
+            data: [{value: 0, name: '订单+合同'}],
+            center: ["47%", "45%"], // 默认全局居中
+            splitLine: {           //分割线样式（及10、20等长线样式）
+                length: 15,
+                lineStyle: {            // 分隔线样式。
+                    color: "#eee",              //线的颜色,默认 #eee。
+                    opacity: 1,                 //图形透明度。支持从 0 到 1 的数字，为 0 时不绘制该图形。
+                    width: 2,                   //线度,默认 2。
+                    type: "solid",              //线的类型,默认 solid。 此外还有 dashed,dotted
+                    shadowBlur: 10,             //(发光效果)图形阴影的模糊大小。该属性配合 shadowColor,shadowOffsetX, shadowOffsetY 一起设置图形的阴影效果。
+                    shadowColor: "#fff",        //阴影颜色。支持的格式同color。
+                }
+            },
+            pointer: { //指针样式
+                length: '80%'
+            },
+            axisLine: {
+                show: true,// 是否显示仪表盘轴线(轮廓线),默认 true。
+                lineStyle: { // 属性lineStyle控制线条样式
+                    shadowBlur: 10,             //(发光效果)图形阴影的模糊大小。该属性配合 shadowColor,shadowOffsetX, shadowOffsetY 一起设置图形的阴影效果。
+                    shadowColor: "#fff",        //阴影颜色。支持的格式同color。
+                    width: 12//表盘宽度
+                }
+            }
+        }]
+    });
 
 
     // myChart2.setOption(option, true);
@@ -451,7 +586,7 @@
         url: "/crmproject/MySalesInstrument/getOrder",
         type: "post",
         dataType: "json",
-        data: {id: 1},
+        data: {},
         success: function (data) {
             myChartStatdata = data;
             myChartStat.setOption({
@@ -478,18 +613,18 @@
                 }, {
                     name: '完成值',
                     type: 'bar',
-                    data: [myChartStatdata[0].t1,
-                        myChartStatdata[0].t2,
-                        myChartStatdata[0].t3,
-                        myChartStatdata[0].t4,
-                        myChartStatdata[0].t5,
-                        myChartStatdata[0].t6,
-                        myChartStatdata[0].t7,
-                        myChartStatdata[0].t8,
-                        myChartStatdata[0].t9,
-                        myChartStatdata[0].t10,
-                        myChartStatdata[0].t11,
-                        myChartStatdata[0].t12],
+                    data: [myChartStatdata[0].t1 + myChartStatdata[2].t1,
+                        myChartStatdata[0].t2 + myChartStatdata[2].t2,
+                        myChartStatdata[0].t3 + myChartStatdata[2].t3,
+                        myChartStatdata[0].t4 + myChartStatdata[2].t4,
+                        myChartStatdata[0].t5 + myChartStatdata[2].t5,
+                        myChartStatdata[0].t6 + myChartStatdata[2].t6,
+                        myChartStatdata[0].t7 + myChartStatdata[2].t7,
+                        myChartStatdata[0].t8 + myChartStatdata[2].t8,
+                        myChartStatdata[0].t9 + myChartStatdata[2].t9,
+                        myChartStatdata[0].t10 + myChartStatdata[2].t10,
+                        myChartStatdata[0].t11 + myChartStatdata[2].t11,
+                        myChartStatdata[0].t12 + myChartStatdata[2].t12],
                     itemStyle: {   //配置样式，设置每个柱子的颜色
                         normal: {
                             color: '#E5323E'
@@ -497,9 +632,10 @@
                     }
                 }]
             });
-
         }
     });
+
+
     var myChartStat = echarts.init(document.getElementById('statistical'));
     optionStat = {
         title: {
@@ -530,9 +666,10 @@
         calculable: true,
         xAxis: [
             {
-                type: 'category',
                 data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
                 axisLabel: {
+                    interval: 0,
+                    rotate: 30,
                     textStyle: {
                         color: '#fff',//坐标值得具体的颜色
                     }
@@ -793,6 +930,8 @@
                 type: 'category',
                 data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
                 axisLabel: {
+                    interval: 0,
+                    rotate: 30,
                     textStyle: {
                         color: '#fff',//坐标值得具体的颜色
                     }

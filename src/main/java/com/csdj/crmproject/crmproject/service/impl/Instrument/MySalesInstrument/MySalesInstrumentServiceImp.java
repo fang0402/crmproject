@@ -34,6 +34,11 @@ public class MySalesInstrumentServiceImp implements MySalesInstrumentService {
     }
 
     @Override
+    public Map<Object, String> contract(String userId) {
+        return mySalesInstrumentMapperl.contract(userId);
+    }
+
+    @Override
     public Map<Object, String> dianasContract(String userId) {
         return mySalesInstrumentMapperl.dianasContract(userId);
     }

@@ -49,6 +49,23 @@
     <select id="order" resultType="Map">
         SELECT t1.a t1,t2.a t2,t3.a t3,t4.a t4,t5.a t5,t6.a t6,t7.a t7,t8.a t8,t9.a t9,t10.a t10,
         t11.a t11,t12.a t12 FROM
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=1 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t1,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=2 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t2,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=3 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t3,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=4 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t4,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=5 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t5,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=6 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t6,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=7 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t7,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=8 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t8,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=9 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t9,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=10 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t10,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=11 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t11,
+        (SELECT SUM(order_Amount_remitted) a FROM `order` WHERE MONTH(gmt_create)=12 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t12
+
+    </select>
+    <select id="contract" resultType="Map">
+        SELECT t1.a t1,t2.a t2,t3.a t3,t4.a t4,t5.a t5,t6.a t6,t7.a t7,t8.a t8,t9.a t9,t10.a t10,
+        t11.a t11,t12.a t12 FROM
         (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=1 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t1,
         (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=2 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t2,
         (SELECT SUM(contract_saleroom) a FROM `contract` WHERE MONTH(gmt_create)=3 AND YEAR(gmt_create)=YEAR(NOW()) AND fk_user_id = #{userId} ) t3,
