@@ -26,5 +26,5 @@ spring:
         max-wait: -1
     timeout: 300
 mybatis:
-  mapper-locations: /mapper/**/*.xml
+  mapper-locations: /mapper/**.xml,/mapper/**/*.xml
   type-aliases-package: com.csdj.crmproject.crmproject.entity
