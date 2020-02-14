@@ -146,6 +146,10 @@ public class Order {
   private String orderContext;
 
   /**
+   * 用户id
+   */
+  private Integer fkUserId;
+  /**
    * 无参构造
    */
   public Order() {
@@ -187,7 +191,7 @@ public class Order {
    * @param orderSettlement
    * @param orderContext
    */
-  public Order(long orderId, String orderName, long fkCusTypeId, long fkCusId, String fkCusName, long fkObjectTypeId, long fkObjectId, String fkObjectName, String orderType, double orderTotalSum, double orderGrossProfit, double orderRevenue, double orderSaleroom, String fkContactsId, String orderPayment, String orderStartTime, String orderEndTime, String orderConsigneeName, String orderConsigneePhone, String orderConsigneeEmail, String orderConsigneeAddress, double orderAmountRemitted, double orderInvoiceAmount, String orderApprovalStatus, String orderApprovalResult, String orderApprovalTime, String gmtCreate, String creator, String gmtModified, String modifier, String orderTransportation, String orderSettlement, String orderContext) {
+  public Order(long orderId, String orderName, long fkCusTypeId, long fkCusId, String fkCusName, long fkObjectTypeId, long fkObjectId, String fkObjectName, String orderType, double orderTotalSum, double orderGrossProfit, double orderRevenue, double orderSaleroom, String fkContactsId, String orderPayment, String orderStartTime, String orderEndTime, String orderConsigneeName, String orderConsigneePhone, String orderConsigneeEmail, String orderConsigneeAddress, double orderAmountRemitted, double orderInvoiceAmount, String orderApprovalStatus, String orderApprovalResult, String orderApprovalTime, String gmtCreate, String creator, String gmtModified, String modifier, String orderTransportation, String orderSettlement, String orderContext, Integer fkUserId) {
     this.orderId = orderId;
     this.orderName = orderName;
     this.fkCusTypeId = fkCusTypeId;
@@ -221,6 +225,7 @@ public class Order {
     this.orderTransportation = orderTransportation;
     this.orderSettlement = orderSettlement;
     this.orderContext = orderContext;
+    this.fkUserId = fkUserId;
   }
 
   /**
