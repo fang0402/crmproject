@@ -65,20 +65,20 @@
     </select>
 
     <select id="dianasContract" resultType="Map">
-      SELECT pk_contract_id,SUM(contract_saleroom) FROM `contract` WHERE DATE_FORMAT( gmt_create, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
+      SELECT pk_contract_id,SUM(contract_saleroom) contract_saleroom FROM `contract` WHERE DATE_FORMAT( gmt_create, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' )
         AND fk_user_id = #{userId}
         GROUP BY pk_contract_id
     </select>
 
     <select id="seasonContract" resultType="Map">
-         SELECT pk_contract_id,SUM(contract_saleroom) FROM `contract`  WHERE QUARTER(gmt_create)=QUARTER(NOW())
+         SELECT pk_contract_id,SUM(contract_saleroom) contract_saleroom FROM `contract`  WHERE QUARTER(gmt_create)=QUARTER(NOW())
             AND fk_user_id = #{userId}
             GROUP BY pk_contract_id
 
     </select>
 
     <select id="yearContract" resultType="Map">
-        SELECT pk_contract_id,SUM(contract_saleroom) FROM `contract` WHERE YEAR(gmt_create)=YEAR(NOW())
+        SELECT pk_contract_id,SUM(contract_saleroom) contract_saleroom FROM `contract` WHERE YEAR(gmt_create)=YEAR(NOW())
         AND fk_user_id = #{userId}
         GROUP BY pk_contract_id
     </select>
