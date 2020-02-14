@@ -68,7 +68,7 @@ public class ShiroConfig {
         filterMap.put("/skip", "anon");
         filterMap.put("/skipMain", "authc");
         filterMap.put("/skip404", "authc");
-        filterMap.put("/crmproject/**","authc");
+        filterMap.put("/crmproject/**","anon");
         //修改调整的登录页面
         shiroFilterFactoryBean.setLoginUrl("/skipLogin");
         //设置未授权提示页面

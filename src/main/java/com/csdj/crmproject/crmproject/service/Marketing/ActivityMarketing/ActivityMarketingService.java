@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ActivityMarketingService {
     //查询所有活动
-    public List<MarketActivity> activity();
+    public List<MarketActivity> activi();
 }

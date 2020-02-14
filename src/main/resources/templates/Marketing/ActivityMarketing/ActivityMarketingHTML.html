@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>市场活动模块</title>
-    <script type="text/javascript" th:src="@{../bots335/js/jquery-2.1.1.js}"></script>
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+
+
 </head>
 <body>
 <div>
     <table class="table table-hover table-bordered table-condensed"  border="1" cellspacing="0" style="">
         <thead>
-        <tr aria-colspan="12"> <td colspan="4"><a href="/showaddFlow" >添加</a>
-            <a href="/showaddFlow" >添加</a>
-             <a href="/showaddFlow" >添加</a>
-            <a href="/showaddFlow" >添加</a></td></tr>
+        <tr aria-colspan="12"> <td colspan="4"><a href="/crmproject/ActivityMarketing/add" >添加</a>
+            <a href="/ActivityMarketing/add" >修改</a>
+             <a href="/showaddFlow" >删除</a>
+            <a href="/showaddFlow" >查询</a></td></tr>
         <tr>
             <td>活动名称 </td>
             <td>负责人</td>
@@ -26,6 +28,7 @@
             <td>审批结果</td>
             <td>创建人</td>
             <td>创建时间</td>
+            <td>操作</td>
         </tr>
         </thead>
         <tbody id="a">
@@ -35,11 +38,35 @@
 
 </div>
 
-<script type="text/javascript" >
+<script  >
     $("document").ready(function(){
         $.ajax({
+            url: "/crmproject/ActivityMarketing/skipPage",
+            type: "post",
+            data: {
+            },
+            dataType: "json",
+            success: function (msg) {
+                var str="";
+                for(var i=0;i<msg.length;i++){
+                    str=str+"<tr><td>"+msg[i].activityName+"</td><td>"+msg[i].activityHead+"</td>" +
+                        "<td>"+msg[i].activityType+"" +
+                        "</td><td>"+msg[i].activityBudget+"</td><td>"+msg[i].activityActualNumber+"</td>" +
+                        "<td>"+msg[i].activityPlannedStartdate+"</td><td>"+msg[i].activityPlannedEnddate+"</td>" +
+                        "<td>"+msg[i].activityApprovalProcess+"</td><td>"+msg[i].activityCirculationdate+"</td>" +
+                        "<td>"+msg[i].activityApprovalResult+"</td><td>"+msg[i].activityFounder+"</td>" +
+                        "<td>"+msg[i].activityGmtCreate+"</td><td><a href=''>删除</a></td></tr>";
+                }
+                $("#a").html(str);
+            },
+            error: function (data) {
+                alert("网络异常！");
+            }
+        });
+
+       /* $.ajax({
             type:"post",
-            url:"/listrcvbl",
+            url:"/crmproject/ActivityMarketing/skipPage",
             dataType:"json",
             data:{
             },
@@ -66,7 +93,7 @@
             error:function(){
                 alert('错误！');
             }
-        });
+        });*/
     });
 </script>
 </body>
