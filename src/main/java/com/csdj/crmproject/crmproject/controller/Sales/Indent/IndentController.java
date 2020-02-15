@@ -29,7 +29,7 @@ public class IndentController {
         PageInfo<Order> pageInfo=indentService.findOrder(pageNum, pageSize);
         String jsonString = JSON.toJSONString(pageInfo.getList());
         System.out.println(jsonString);
-        String layuiJson = "{\"code\":0,\"msg\":\"\",\"count\":" + 1 + ",\"data\":" + jsonString + "}";// 转换成layui数据表格的值格式
+        String layuiJson = "{\"code\":0,\"msg\":\"\",\"count\":" + 2 + ",\"data\":" + jsonString + "}";// 转换成layui数据表格的值格式
         return layuiJson;
     }
 }
