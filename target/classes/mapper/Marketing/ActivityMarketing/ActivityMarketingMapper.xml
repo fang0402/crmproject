@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csdj.crmproject.crmproject.dao.Marketing.ActivityMarketing.ActivityMarketingMapper">
+    <resultMap type="MarketActivity" id="findwordpaper">
+        <id property="pkMarkActivityId" column="pk_mark_activity_id"/>
+        <result property="activityName" column="activity_name"/>
+        <result property="activityHead" column="fk_user_id"/>
+        <result property="activityType" column="activity_type"/>
+        <result property="activityBudget" column="activity_budget"/>
+        <result property="activityActualNumber" column="activity_actual_number"/>
+        <result property="activityPlannedStartdate" column="activity_planned_start_date"/>
+        <result property="activityPlannedEnddate" column="activity_planned_end_date"/>
+        <result property="activityApprovalProcess" column="activity_approval_process"/>
+        <result property="activityCirculationdate" column="activity_circulation_date"/>
+        <result property="activityApprovalResult" column="activity_approval_result"/>
+        <result property="activityFounder" column="activity_founder"/>
+        <result property="activityGmtCreate" column="activity_gmt_create"/>
+    </resultMap>
+    <select id="activi" resultType="MarketActivity" resultMap="findwordpaper">
+    SELECT pk_mark_activity_id, `activity_name`  ,`fk_user_id` ,`activity_type` ,
+`activity_budget` ,
+`activity_actual_number`,`activity_planned_start_date` ,`activity_planned_end_date`,
+`activity_approval_process` ,
+`activity_circulation_date`  ,`activity_approval_result`  ,`activity_founder` ,
+`activity_gmt_create`   FROM `market_activity`
+
+    </select>
+
+
+</mapper>

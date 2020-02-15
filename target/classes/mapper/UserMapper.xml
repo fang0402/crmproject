@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csdj.crmproject.crmproject.dao.UserMapper">
+
+    <resultMap id="userMap" type="User">
+        <id column="id" property="pkUserId"></id>
+        <result column="userName" property="userName"></result>
+        <result column="passWord" property="userPassword"></result>
+    </resultMap>
+    <select id="login" resultMap="userMap">
+        SELECT pk_user_id id,user_name userName,user_password passWord FROM `user` WHERE user_name=#{userName}
+    </select>
+
+    <select id="selectRole" resultType="String">
+        SELECT r.role_ro FROM `user_role` ur
+        LEFT JOIN `role` r ON (r.pk_role_id=ur.fk_role_id)
+        LEFT JOIN `user` u ON (u.pk_user_id=ur.fk_user_id)
+        WHERE u.user_name=#{userName}
+    </select>
+</mapper>

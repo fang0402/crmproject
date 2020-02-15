@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.csdj.crmproject.crmproject.dao.Instrument.SalesmanInstrument.SalesmanInstrumentDao">
+    <!--查询所有用户-->
+    <select id="listUsers" resultType="User">
+        select pk_user_id pkUserId, user_name userName
+        from user
+    </select>
+    <!--销售预测-->
+    <select id="countSaleForecasting" resultType="StatisticalResult">
+        select count(*) opportunitiesNumber, phase_type_name phaseTypeName, sum(salesopp_expected_signing_money) + sum(salesopp_anticipated_profit) summation
+        from salesopp
+                 left join phase_type on salesopp.pk_salesopp_id = phase_type.pk_phase_type_id
+        where fk_user_id = #{userId}
+        group by phase_type_name, phase_type_sequence
+        order by phase_type_sequence;
+    </select>
+    <!--回顾业绩完成值-->
+    <!--本月-->
+    <select id="countRetrospectiveMonth" resultType="StatisticalResult">
+        select sum(contract_amount_remitted) completeValue, DATE_FORMAT(CURDATE(), '%m') strMonth
+        from cus_sales_target
+                 left join salesopp on cus_sales_target.fk_user_business_id = salesopp.fk_user_id
+                 left join contract on salesopp.pk_salesopp_id = contract.fk_object_id
+        where DATE_FORMAT(contract.end_time, '%Y%m') = DATE_FORMAT(CURDATE(), '%Y%m')
+          and cus_sales_target.fk_user_business_id = #{userId}
+          and sales_target_type = '回顾';
+    </select>
+    <!--本季-->
+    <select id="countRetrospectiveQuarter" resultType="StatisticalResult">
+        select sum(contract_amount_remitted) completeValue, QUARTER(NOW()) strQuarter
+        from cus_sales_target
+                 left join salesopp on cus_sales_target.fk_user_business_id = salesopp.fk_user_id
+                 left join contract on salesopp.pk_salesopp_id = contract.fk_object_id
+        where QUARTER(contract.end_time) = QUARTER(NOW())
+          and cus_sales_target.fk_user_business_id = #{userId}
+          and sales_target_type = '回顾';
+    </select>
+    <!--本年-->
+    <select id="countRetrospectiveYear" resultType="StatisticalResult">
+        select sum(contract_amount_remitted) completeValue, YEAR(NOW()) strYear
+        from cus_sales_target
+                 left join salesopp on cus_sales_target.fk_user_business_id = salesopp.fk_user_id
+                 left join contract on salesopp.pk_salesopp_id = contract.fk_object_id
+        where YEAR(contract.end_time) = YEAR(NOW())
+          and cus_sales_target.fk_user_business_id = #{userId}
+          and sales_target_type = '回顾';
+    </select>
+    <!--本年回顾业绩计划值-->
+    <select id="reviewPerformancePlan" resultType="CusSalesTarget">
+        select cus_sales_tar_january   cusSalesTarJanuary,
+               cus_sales_tar_february  cusSalesTarFebruary,
+               cus_sales_tar_march     cusSalesTarMarch,
+               cus_sales_tar_april     cusSalesTarApril,
+               cus_sales_tar_may       cusSalesTarMay,
+               cus_sales_tar_jun       cusSalesTarJun,
+               cus_sales_tar_july      cusSalesTarJuly,
+               cus_sales_tar_august    cusSalesTarAugust,
+               cus_sales_tar_september cusSalesTarSeptember,
+               cus_sales_tar_october   cusSalesTarOctober,
+               cus_sales_tar_november  cusSalesTarNovember,
+               cus_sales_tar_december  cusSalesTarDecember
+        from cus_sales_target
+        where cus_sales_target_year = YEAR(NOW())
+          and cus_sales_target.fk_user_business_id = #{userId}
+          and sales_target_type = '回顾';
+    </select>
+    <!--    销售业绩完成值-->
+    <!--    本月-->
+    <select id="" resultType="StatisticalResult">
+
+    </select>
+
+</mapper>

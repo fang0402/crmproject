@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.csdj.crmproject.crmproject.dao.Sales.Indent.IndentDao">
+    <resultMap id="orderMap" type="Order">
+        <id column="order_id" property="orderId"></id>
+        <result column="order_name" property="orderName"></result>
+        <result column="fk_cus_type_id" property="fkCusTypeId"></result>
+        <result column="fk_cus_id" property="fkCusId"></result>
+        <result column="fk_cus_name" property="fkCusName"></result>
+        <result column="fk_object_type_id" property="fkObjectTypeId"></result>
+        <result column="fk_object_id" property="fkObjectId"></result>
+        <result column="fk_object_name" property="fkObjectName"></result>
+        <result column="order_type" property="orderType"></result>
+        <result column="order_totalsum" property="orderTotalSum"></result>
+        <result column="order_gross_profit" property="orderGrossProfit"></result>
+        <result column="order_revenue" property="orderRevenue"></result>
+        <result column="order_saleroom" property="orderSaleroom"></result>
+        <result column="fk_contacts_id" property="fkContactsId"></result>
+        <result column="order_payment" property="orderPayment"></result>
+        <result column="order_start_time" property="orderStartTime"></result>
+        <result column="order_end_time" property="orderEndTime"></result>
+        <result column="order_consignee_name" property="orderConsigneeName"></result>
+        <result column="order_consignee_phone" property="orderConsigneePhone"></result>
+        <result column="order_consignee_email" property="orderConsigneeEmail"></result>
+        <result column="order_consignee_address" property="orderConsigneeAddress"></result>
+        <result column="order_Amount_remitted" property="orderAmountRemitted"></result>
+        <result column="order_invoice_amount" property="orderInvoiceAmount"></result>
+        <result column="order_approval_status" property="orderApprovalStatus"></result>
+        <result column="order_approval_result" property="orderApprovalResult"></result>
+        <result column="order_approval_time" property="orderApprovalTime"></result>
+        <result column="gmt_create" property="gmtCreate"></result>
+        <result column="creator" property="creator"></result>
+        <result column="gmt_modified" property="gmtModified"></result>
+        <result column="modifier" property="modifier"></result>
+        <result column="order_transportation" property="orderTransportation"></result>
+        <result column="order_settlement" property="orderSettlement"></result>
+        <result column="order_context" property="orderContext"></result>
+        <result column="fkUserId" property="fk_user_id"></result>
+    </resultMap>
+
+    <select id="findOrder" resultMap="orderMap">
+        select * from `order`
+    </select>
+</mapper>
