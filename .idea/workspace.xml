@@ -1,444 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0da754bf-c7e6-4673-bfa0-5c9fee579996" name="默认更改列表" comment="订单管理">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/crmproject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_2_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_druid_1_0_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_47.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_5_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_jsqlparser_jsqlparser_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_5_1_8.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_theborakompanioni_thymeleaf_extras_shiro_2_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_4_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_beanutils_commons_beanutils_1_8_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_lettuce_lettuce_core_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_buffer_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_codec_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_common_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_handler_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_resolver_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_4_1_43_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_projectreactor_reactor_core_3_3_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_annotation_jakarta_annotation_api_1_3_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_validation_jakarta_validation_api_2_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_48.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_sf_ehcache_ehcache_core_2_6_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_7_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_to_slf4j_2_12_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_cache_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_core_1_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_ehcache_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_lang_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_spring_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_shiro_shiro_web_1_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_9_0_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_9_0_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_9_0_27.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_crazycake_shiro_redis_2_4_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_validator_hibernate_validator_6_0_18_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_4_1_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_1_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_reactivestreams_reactive_streams_1_0_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_29.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_redis_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_json_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_keyvalue_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_redis_2_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_oxm_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_2_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_25.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__redis_clients_jedis_2_9_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/META-INF/crmproject.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/CrmprojectApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/CustomerManage/ContactManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/CustomerManage/CustomerCare/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/CustomerManage/CustomerVisit/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/CustomerManage/EnterpriseAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/CustomerManage/PersonalAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Instrument/CompanyInstrument/CompanyInstrumentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Instrument/MySalesInstrument/MySalesInstrumentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Instrument/SalesmanInstrument/SalesmanInstrumentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Instrument/SectionInstrument/SectionInstrumentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Marketing/ActivityMarketing/ActivityMarketingController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Marketing/ThreadMarketing/ThreadMarketingController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/RedisController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/DepartmentSalesTarget/DepartmentSalesTargetController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/DispatchBill/DispatchBillController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/Indent/IndentController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/PaymentPlan/PaymentPlanController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/PaymentRecords/PaymentRecordsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/PriceSheet/PriceSheetController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/ProductClassificationManage/ProductClassificationManageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/ProductManagement/ProductManagementController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/ReimbursementOfSales/ReimbursementOfSalesController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/ReturnManage/ReturnManageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/SalesContract/SalesContractController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/SalesLeads/SalesLeadsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/SalesmanSalesTarget/SalesmanSalesTargetController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/UserController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/shiro/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/CustomerManage/ContactManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/CustomerManage/CustomerCare/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/CustomerManage/CustomerVisit/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/CustomerManage/EnterpriseAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/CustomerManage/PersonalAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Instrument/CompanyInstrument/dao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Instrument/MySalesInstrument/MySalesInstrumentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Instrument/MySalesInstrument/dao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Instrument/SalesmanInstrument/SalesmanInstrumentDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Instrument/SectionInstrument/SectionInstrumentMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Instrument/SectionInstrument/dao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Marketing/ActivityMarketing/ActivityMarketingMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Marketing/ThreadMarketing/dao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/DepartmentSalesTarget/DepartmentSalesTargetDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/DispatchBill/DispatchBillDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/Indent/IndentDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/PaymentPlan/PaymentPlanMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/PaymentRecords/PaymentRecordsMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/PriceSheet/PriceSheetDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/ProductClassificationManage/ProductClassificationManageMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/ProductManagement/ProductManagementMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/ReimbursementOfSales/ReimbursementOfSalesMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/ReturnManage/ReturnManageMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/SalesContract/SalesContractMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/SalesLeads/SalesLeadsDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/SalesmanSalesTarget/SalesmanSalesTargetDao.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/UserMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/shiro/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Accessory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/AssociateType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ClientTable.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Clue.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/CluesTrack.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Com.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ConSalesopp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Contract.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ContractAccessory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ContractDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ContractInvoice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ContractReceiPlan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ContractReceiRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ContractReturn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/CusSalesTarget.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/CustomerType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Department.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/DepartmentSalesTarget.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Dispatched.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/DispatchingDetailRelation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/DoInvoice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/DoReturnGoods.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/FaultDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/FaultWar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Invoice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Order.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/OrderAccessory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/OrderInvoice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/OrderReceiPlan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/OrderReceiRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/OrderReturn.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/PhaseInfo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/PhaseType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ProDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ProType.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Product.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/QuoSalesrelation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Quotation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ReCeiPlan.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ReCeiPlanRemind.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ReCeiRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/ReturnGoods.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/SalesCost.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Salesopp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/SalesoppContact.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/SalesoppOrder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/TrackRecord.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/marketingactivity/MarketActivity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/marketingactivity/MarketAttach.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/salesmanagement/SalesCostDetail.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/salesmanagement/StatisticalResult.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/CustomerManage/ContactManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/CustomerManage/CustomerCare/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/CustomerManage/CustomerVisit/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/CustomerManage/EnterpriseAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/CustomerManage/PersonalAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Instrument/CompanyInstrument/service.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Instrument/MySalesInstrument/MySalesInstrumentService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Instrument/MySalesInstrument/service.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Instrument/SalesmanInstrument/SalesmanInstrumentService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Instrument/SectionInstrument/SectionInstrumentService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Instrument/SectionInstrument/service.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Marketing/ActivityMarketing/ActivityMarketingService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Marketing/ActivityMarketing/impl/ActivityMarketingServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Marketing/ThreadMarketing/service.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/DepartmentSalesTarget/DepartmentSalesTargetService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/DispatchBill/DispatchBillService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/Indent/IndentService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/PaymentPlan/PaymentPlanServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/PaymentRecords/PaymentRecordsServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/PriceSheet/PriceSheetService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/ProductClassificationManage/ProductClassificationManageServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/ProductManagement/ProductManagementServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/ReimbursementOfSales/ReimbursementOfSalesServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/ReturnManage/ReturnManageServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/SalesContract/SalesContractServer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/SalesLeads/SalesLeadsService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/SalesmanSalesTarget/SalesmanSalesTargetService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/UserService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/CustomerManage/ContactManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/CustomerManage/CustomerCare/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/CustomerManage/CustomerVisit/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/CustomerManage/EnterpriseAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/CustomerManage/PersonalAccountManage/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Instrument/CompanyInstrument/impl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Instrument/MySalesInstrument/MySalesInstrumentServiceImp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Instrument/SalesmanInstrument/SalesmanInstrumentServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Instrument/SectionInstrument/SectionInstrumentServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Instrument/SectionInstrument/impl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Marketing/ActivityMarketing/impl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Marketing/ThreadMarketing/impl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/DepartmentSalesTarget/imp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/DispatchBill/imp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/Indent/IndentServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/PaymentPlan/PaymentPlanServerImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/PaymentRecords/PaymentRecordsServerImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/PriceSheet/imp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/ProductClassificationManage/ProductClassificationManageServerImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/ProductManagement/ProductManagementServerImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/ReimbursementOfSales/ReimbursementOfSalesServerImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/ReturnManage/ReturnManageReturnManage.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/SalesContract/SalesContractServerImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/SalesLeads/imp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/SalesmanSalesTarget/imp.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/shiro/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/se.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/shiro/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/util/AutoStartProjectInDefaultBrowser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/util/ErrorConfigurar.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/util/GlobalException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/util/RedisConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/util/ShiroConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/util/ShiroRealm.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/util/shiro/test.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csls/layuidemo/entity/Care.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/csls/layuidemo/entity/Visit.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Instrument/CompanyInstrument/CompanyInstrument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Instrument/MySalesInstrument/MySalesInstrumentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Instrument/SalesmanInstrument/SalesmanInstrument.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Instrument/SectionInstrument/SectionInstrument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Instrument/SectionInstrument/SectionInstrument.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Marketing/ActivityMarketing/ActivityMarketingMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/Marketing/ThreadMarketing/ThreadMarketing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/Indent/IndentMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/PaymentPlan/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/PaymentRecords/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/PriceSheet/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/ProductClassificationManage/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/ProductManagement/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/ReimbursementOfSales/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/ReturnManage/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/SalesContract/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/SalesLeads/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/mapper/sales/SalesmanSalesTarget/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/public.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/css/xadmin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/fonts/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/images/aiwrap.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/images/bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/echarts.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/jquery-2.1.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/jquery-3.4.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/js/xadmin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/layui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/layui.mobile.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/code.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/laydate/default/laydate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/layer/default/icon-ext.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/layer/default/icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/layer/default/layer.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/layer/default/loading-0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/layer/default/loading-1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/css/modules/layer/default/loading-2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/font/iconfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/font/iconfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/font/iconfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/font/iconfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/font/iconfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/0.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/10.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/11.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/12.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/13.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/14.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/15.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/17.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/18.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/19.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/20.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/21.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/22.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/23.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/24.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/25.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/26.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/27.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/28.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/29.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/30.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/31.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/32.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/33.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/34.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/35.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/36.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/37.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/38.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/39.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/4.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/40.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/41.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/42.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/43.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/44.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/45.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/46.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/47.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/48.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/49.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/5.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/50.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/51.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/52.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/53.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/54.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/55.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/56.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/57.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/58.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/59.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/6.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/60.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/61.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/62.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/63.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/64.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/65.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/66.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/67.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/68.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/69.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/7.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/70.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/71.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/8.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/images/face/9.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/carousel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/code.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/colorpicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/element.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/flow.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/form.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/laydate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/layedit.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/layer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/laypage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/laytpl.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/mobile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/rate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/slider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/table.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/transfer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/tree.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/upload.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/lay/modules/util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/layui.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/static/lib/layui/layui.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Instrument/MySalesInstrument/MySalesInstrumentHtml.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Instrument/SalesmanInstrument/SalesmanInstrument.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Instrument/SectionInstrument/SectionInstrument.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Marketing/ActivityMarketing/ActivityMarketingHTML.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/Marketing/ActivityMarketing/addActivityMarketingHTML.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/DepartmentSalesTarget/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/DispatchBill/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/Indent/order_manage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/PaymentPlan/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/PaymentRecords/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/PriceSheet/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/ProductClassificationManage/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/ProductManagement/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/ReimbursementOfSales/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/ReturnManage/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/SalesContract/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/SalesLeads/a.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/SalesmanSalesTarget/SalesmanSalesTarget.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/templates/sales/SalesmanSalesTarget/a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sales/Indent/a.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/sales/DepartmentSalesTarget/a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sales/Indent/a.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/sales/DispatchBill/a.html" afterDir="false" />
+    <list default="true" id="0da754bf-c7e6-4673-bfa0-5c9fee579996" name="默认更改列表" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/sales/Indent/add_order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/controller/Sales/Indent/IndentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/controller/Sales/Indent/IndentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/dao/Sales/Indent/IndentDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/dao/Sales/Indent/IndentDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/entity/salesmanagement/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/service/Sales/Indent/IndentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/service/Sales/Indent/IndentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/service/impl/Sales/Indent/IndentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/csdj/crmproject/crmproject/service/impl/Sales/Indent/IndentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/sales/Indent/IndentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/sales/Indent/IndentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/sales/Indent/order_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/sales/Indent/order_manage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/Indent/IndentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/controller/Sales/Indent/IndentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/Indent/IndentDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/dao/Sales/Indent/IndentDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/entity/Order.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/Indent/IndentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/Sales/Indent/IndentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/Indent/IndentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/csdj/crmproject/crmproject/service/impl/Sales/Indent/IndentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mapper/sales/Indent/IndentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mapper/sales/Indent/IndentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/sales/Indent/order_manage.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/sales/Indent/order_manage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -500,7 +79,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/templates/sales/Indent" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -511,11 +90,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.csdj.crmproject.crmproject.entity.salesmanagement" />
       <recent name="com.csdj.crmproject.crmproject.service.impl.Sales.Indent" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\tzh\IdeaProjects\crmproject\src\main\resources\static\js" />
       <recent name="D:\Users\tzh\IdeaProjects\crmproject\src\main\resources\templates\sales\Indent" />
+      <recent name="D:\Users\tzh\IdeaProjects\crmproject\src\main\resources\static\js" />
       <recent name="D:\Users\tzh\IdeaProjects\crmproject\src\main\resources\mapper\sales\Indent" />
       <recent name="D:\Users\tzh\IdeaProjects\crmproject\src\main\resources\mapper\orderManage" />
     </key>
@@ -567,7 +147,10 @@
       <workItem from="1581743206930" duration="17000" />
       <workItem from="1581755147401" duration="11143000" />
       <workItem from="1581774108054" duration="3358000" />
-      <workItem from="1581777700913" duration="1723000" />
+      <workItem from="1581777700913" duration="2246000" />
+      <workItem from="1581780202954" duration="11000" />
+      <workItem from="1581831171634" duration="2816000" />
+      <workItem from="1581905482997" duration="15319000" />
     </task>
     <task id="LOCAL-00001" summary="订单管理">
       <created>1581768442120</created>
@@ -604,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581778987734</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="订单管理">
+      <created>1581779591126</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581779591126</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -627,50 +217,66 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="96" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680@0.0.1280.680" timestamp="1580967430088" />
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1581758559880">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser" timestamp="1581916576608">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1581758559880" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1581779143486">
+    <state x="446" y="50" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1581916576608" />
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1581779589036">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1581779143486" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1581779589036" />
     <state x="421" y="99" key="FileChooserDialogImpl" timestamp="1580963761685">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="99" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1580963761685" />
-    <state width="1237" height="294" key="GridCell.Tab.0.bottom" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.0.bottom" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
-    <state width="1237" height="294" key="GridCell.Tab.0.center" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="323" key="GridCell.Tab.0.center" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
-    <state width="1237" height="294" key="GridCell.Tab.0.left" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="323" key="GridCell.Tab.0.left" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
-    <state width="1237" height="294" key="GridCell.Tab.0.right" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="323" key="GridCell.Tab.0.right" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
-    <state width="1237" height="294" key="GridCell.Tab.1.bottom" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="323" key="GridCell.Tab.1.bottom" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
-    <state width="1237" height="294" key="GridCell.Tab.1.center" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="323" key="GridCell.Tab.1.center" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
-    <state width="1237" height="294" key="GridCell.Tab.1.left" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="323" key="GridCell.Tab.1.left" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
-    <state width="1237" height="294" key="GridCell.Tab.1.right" timestamp="1581778631819">
+    <state width="1237" height="323" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="323" key="GridCell.Tab.1.right" timestamp="1581922543696">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="294" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1581778631819" />
+    <state width="1237" height="323" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1581922543696" />
+    <state width="1237" height="65" key="GridCell.Tab.2.bottom" timestamp="1581914315470">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="65" key="GridCell.Tab.2.bottom/0.0.1280.680@0.0.1280.680" timestamp="1581914315470" />
+    <state width="1237" height="65" key="GridCell.Tab.2.center" timestamp="1581914315470">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="65" key="GridCell.Tab.2.center/0.0.1280.680@0.0.1280.680" timestamp="1581914315470" />
+    <state width="1237" height="65" key="GridCell.Tab.2.left" timestamp="1581914315470">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="65" key="GridCell.Tab.2.left/0.0.1280.680@0.0.1280.680" timestamp="1581914315470" />
+    <state width="1237" height="65" key="GridCell.Tab.2.right" timestamp="1581914315470">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="65" key="GridCell.Tab.2.right/0.0.1280.680@0.0.1280.680" timestamp="1581914315470" />
     <state x="122" y="57" key="MergeDialog" timestamp="1581768031967">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -687,10 +293,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="144" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1580967073531" />
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1581768484413">
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2" timestamp="1581779603401">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1581768484413" />
+    <state x="233" y="77" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1581779603401" />
     <state x="93" y="93" width="1095" height="495" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1581590808058">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -715,9 +321,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="28" y="49" key="new project wizard/0.0.1280.680@0.0.1280.680" timestamp="1581646907978" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1581758283872">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1581911565971">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1581758283872" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1581911565971" />
   </component>
 </project>

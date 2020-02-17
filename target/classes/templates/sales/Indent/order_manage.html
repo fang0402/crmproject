@@ -12,7 +12,7 @@
 
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container layui-input-inline">
-        <button class="layui-btn layui-btn-sm" lay-event="getCheckData">添加</button>
+        <button class="layui-btn layui-btn-sm" lay-event="addOrder">添加</button>
         <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">编辑</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">删除</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">查看</button>
@@ -24,15 +24,15 @@
     </div>
 
     <div class="layui-input-inline">
-        <select name="city" lay-verify="required">
+        <select name="orderApprovalStatus" lay-filter="orderApprovalStatus">
             <option value="">所有人的订单(全部)</option>
-            <option value="0">我的订单(全部)</option>
-            <option value="1">我的订单(审批中)</option>
-            <option value="2">我的订单(以成功)</option>
-            <option value="3">我的订单(以失败)</option>
-            <option value="1">所有人的订单(审批中)</option>
-            <option value="2">所有人的订单(以成功)</option>
-            <option value="3">所有人的订单(以失败)</option>
+            <option value="">我的订单(全部)</option>
+            <option value="审批中">我的订单(审批中)</option>
+            <option value="以成功">我的订单(以成功)</option>
+            <option value="以失败">我的订单(以失败)</option>
+            <option value="审批中">所有人的订单(审批中)</option>
+            <option value="以成功">所有人的订单(以成功)</option>
+            <option value="以失败">所有人的订单(以失败)</option>
         </select>
     </div>
 </script>
@@ -49,14 +49,14 @@
             ,url: 'find_order.htmls' //数据接口
             ,page: true //开启分页
             ,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
-            ,limits:[1,2,3]
-            ,limit:1
+            ,limits:[4,6,8]
+            ,limit:4
             ,cols: [
                 [ //表头
                 {field: 'orderId', title: '订单编号',width:120}
                 ,{field: 'orderName', title: '名称',width:120}
-                ,{field: 'sex', title: '所属客户',width:120}
-                ,{field: 'fkObjectId', title: '所属对象',width:120}
+                ,{field: 'fkCusName', title: '所属客户',width:120}
+                ,{field: 'fkObjectName', title: '所属对象',width:120}
                 ,{field: 'orderType', title: '分类',width:120}
                 ,{field: 'orderTotalSum', title: '不含税总额',width:120}
                 ,{field: 'orderGrossProfit', title: '毛利润',width:120}
@@ -69,6 +69,57 @@
                 ,{field: 'orderApprovalResult', title: '审批结果',width:120}
             ]
             ]
+        });
+
+        //头工具栏事件
+        table.on('toolbar(test)', function(obj){
+            var checkStatus = table.checkStatus(obj.config.id);
+            switch(obj.event){
+                case 'addOrder':
+                    layer.open({
+                        type: 2,
+                        area: ['1000px', '450px'],
+                        title:'添加订单信息',
+                        content: 'add_order.html',
+                        btn: ['保存', '取消'],
+                        btnAlign: 'c',
+                        yes: function (index, layero) {
+                            var body = layer.getChildFrame('body', index);
+                            body.find('#btnAddOrdre').click();
+                        },
+                        btn2: function(index, layero){
+                            layer.close(index);
+                        }
+                    });
+                    break;
+                case 'getCheckLength':
+                    var data = checkStatus.data;
+                    layer.msg('选中了：'+ data.length + ' 个');
+                    break;
+                case 'isAll':
+                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                    break;
+
+                //自定义头工具栏右侧图标 - 提示
+                case 'LAYTABLE_TIPS':
+                    layer.alert('这是工具栏右侧自定义的一个图标按钮');
+                    break;
+            };
+        });
+
+        //审批状态监听
+        form.on('select(orderApprovalStatus)', function(data){
+            var orderApprovalStatus=data.value;
+            table.reload('demo', {
+                url: 'find_order.htmls'
+                , where: {
+                    orderApprovalStatus: orderApprovalStatus,
+                } //设定异步数据接口的额外参数
+                , page: {
+                    curr: 1 //重新从第 1 页开始
+                }
+                //,height: 300
+            });
         });
 
     });

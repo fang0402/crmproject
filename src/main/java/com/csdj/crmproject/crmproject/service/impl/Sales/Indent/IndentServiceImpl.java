@@ -1,7 +1,7 @@
 package com.csdj.crmproject.crmproject.service.impl.Sales.Indent;
 
 import com.csdj.crmproject.crmproject.dao.Sales.Indent.IndentDao;
-import com.csdj.crmproject.crmproject.entity.Order;
+import com.csdj.crmproject.crmproject.entity.salesmanagement.Order;
 import com.csdj.crmproject.crmproject.service.Sales.Indent.IndentService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -18,11 +18,22 @@ import java.util.List;
 public class IndentServiceImpl implements IndentService {
     @Resource
     private IndentDao indentDao;
+
     @Override
-    public PageInfo<Order> findOrder(int pageNum, int pageSize) {
+    public int orderCount(String orderApprovalStatus) {
+        return indentDao.orderCount(orderApprovalStatus);
+    }
+
+    @Override
+    public PageInfo<Order> findOrder(int pageNum, int pageSize,String orderApprovalStatus) {
         PageHelper.startPage(pageNum, pageSize);
-        List<Order> list=indentDao.findOrder();
+        List<Order> list=indentDao.findOrder(orderApprovalStatus);
         PageInfo<Order> pageInfo=new PageInfo<>(list);
         return pageInfo;
+    }
+
+    @Override
+    public int addOrder(Order order) {
+        return indentDao.addOrder(order);
     }
 }
