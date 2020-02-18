@@ -62,4 +62,60 @@ public interface MySalesInstrumentService {
      * @return
      */
     Map<Object,String> yearContract(@Param("userId") String userId);
+
+
+    /**
+     * 本月回款完成情况
+     * @param userId
+     * @return
+     */
+    Double dianasOrReceiPlan(@Param("userId") String userId);
+    /**
+     * 本月应回款
+     * @param userId
+     * @return
+     */
+    Double dianasRecei_plan(@Param("userId") String userId);
+
+    /**
+     * 本季回款完成情况
+     * @param userId
+     * @return
+     */
+    Double seasonOrReceiPlan(@Param("userId") String userId);
+    /**
+     * 本季应回款
+     * @param userId
+     * @return
+     */
+    Double seasonRecei_plan(@Param("userId") String userId);
+
+    /**
+     * 本年回款完成情况
+     * @param userId
+     * @return
+     */
+    Double yearOrReceiPlan(@Param("userId") String userId);
+    /**
+     * 本年应回款
+     * @param userId
+     * @return
+     */
+    Double yearRecei_plan(@Param("userId") String userId);
+
+    /**
+     *
+     * 本年完成情况
+     * @param userId
+     * @return
+     */
+    Map<String,Double> yearAccomplish(@Param("userId") String userId);
+
+    /**
+     *
+     * 本年应完成
+     * @param userId
+     * @return
+     */
+    Map<String,Double> yearAnswerAccomplish(@Param("userId") String userId);
 }

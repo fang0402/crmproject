@@ -57,4 +57,44 @@ public class MySalesInstrumentServiceImp implements MySalesInstrumentService {
     public Map<Object, String> yearContract(String userId) {
         return mySalesInstrumentMapperl.yearContract(userId);
     }
+
+    @Override
+    public Double dianasOrReceiPlan(String userId) {
+        return mySalesInstrumentMapperl.dianasOrReceiPlan(userId);
+    }
+
+    @Override
+    public Double dianasRecei_plan(String userId) {
+        return mySalesInstrumentMapperl.dianasRecei_plan(userId);
+    }
+
+    @Override
+    public Double seasonOrReceiPlan(String userId) {
+        return mySalesInstrumentMapperl.seasonOrReceiPlan(userId);
+    }
+
+    @Override
+    public Double seasonRecei_plan(String userId) {
+        return mySalesInstrumentMapperl.seasonRecei_plan(userId);
+    }
+
+    @Override
+    public Double yearOrReceiPlan(String userId) {
+        return mySalesInstrumentMapperl.yearOrReceiPlan(userId);
+    }
+
+    @Override
+    public Double yearRecei_plan(String userId) {
+        return mySalesInstrumentMapperl.yearRecei_plan(userId);
+    }
+
+    @Override
+    public Map<String, Double> yearAccomplish(String userId) {
+        return mySalesInstrumentMapperl.yearAccomplish(userId);
+    }
+
+    @Override
+    public Map<String, Double> yearAnswerAccomplish(String userId) {
+        return mySalesInstrumentMapperl.yearAnswerAccomplish(userId);
+    }
 }

@@ -19,7 +19,7 @@ public interface MySalesInstrumentMapper {
      * 获取销售目标
      * @return
      */
-    CusSalesTarget getOrder(@Param("userId") String userId,@Param("year")String year);
+    CusSalesTarget getOrder(@Param("userId") String userId, @Param("year") String year);
     /**
      * 本月销售业绩
      * @return 数据
@@ -67,5 +67,61 @@ public interface MySalesInstrumentMapper {
      * @return
      */
     Map<Object,String> yearContract(@Param("userId") String userId);
+
+
+    /**
+     * 本月回款完成情况
+     * @param userId
+     * @return
+     */
+    Double dianasOrReceiPlan(@Param("userId") String userId);
+    /**
+     * 本月应回款
+     * @param userId
+     * @return
+     */
+    Double dianasRecei_plan(@Param("userId") String userId);
+
+    /**
+     * 本季回款完成情况
+     * @param userId
+     * @return
+     */
+    Double seasonOrReceiPlan(@Param("userId") String userId);
+    /**
+     * 本季应回款
+     * @param userId
+     * @return
+     */
+    Double seasonRecei_plan(@Param("userId") String userId);
+
+    /**
+     * 本年回款完成情况
+     * @param userId
+     * @return
+     */
+    Double yearOrReceiPlan(@Param("userId") String userId);
+    /**
+     * 本年应回款
+     * @param userId
+     * @return
+     */
+    Double yearRecei_plan(@Param("userId") String userId);
+
+    /**
+     *
+     * 本年完成情况
+     * @param userId 当前用户id
+     * @return
+     */
+    Map<String,Double> yearAccomplish(@Param("userId") String userId);
+
+    /**
+     *
+     * 本年应完成
+     * @param userId 当前用户id
+     * @return
+     */
+    Map<String,Double> yearAnswerAccomplish(@Param("userId") String userId);
 
 }
