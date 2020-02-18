@@ -33,7 +33,17 @@ public class IndentServiceImpl implements IndentService {
     }
 
     @Override
+    public Order findGetOrderId(long orderId) {
+        return indentDao.findGetOrderId(orderId);
+    }
+
+    @Override
     public int addOrder(Order order) {
         return indentDao.addOrder(order);
+    }
+
+    @Override
+    public int updateOrder(Order order) {
+        return indentDao.updateOrder(order);
     }
 }

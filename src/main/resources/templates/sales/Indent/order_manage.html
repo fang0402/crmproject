@@ -13,7 +13,7 @@
 <script type="text/html" id="toolbarDemo">
     <div class="layui-btn-container layui-input-inline">
         <button class="layui-btn layui-btn-sm" lay-event="addOrder">添加</button>
-        <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">编辑</button>
+        <button class="layui-btn layui-btn-sm" lay-event="updateOrder">编辑</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">删除</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">查看</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">发起流程</button>
@@ -25,14 +25,10 @@
 
     <div class="layui-input-inline">
         <select name="orderApprovalStatus" lay-filter="orderApprovalStatus">
-            <option value="">所有人的订单(全部)</option>
-            <option value="">我的订单(全部)</option>
-            <option value="审批中">我的订单(审批中)</option>
-            <option value="以成功">我的订单(以成功)</option>
-            <option value="以失败">我的订单(以失败)</option>
-            <option value="审批中">所有人的订单(审批中)</option>
-            <option value="以成功">所有人的订单(以成功)</option>
-            <option value="以失败">所有人的订单(以失败)</option>
+            <option value="0">所有人的订单(全部)</option>
+            <option value="1">所有人的订单(审批中)</option>
+            <option value="2">所有人的订单(以成功)</option>
+            <option value="3">所有人的订单(以失败)</option>
         </select>
     </div>
 </script>
@@ -58,23 +54,51 @@
                 ,{field: 'orderName', title: '名称',width:120}
                 ,{field: 'fkCusName', title: '所属客户',width:120}
                 ,{field: 'fkObjectName', title: '所属对象',width:120}
-                ,{field: 'orderType', title: '分类',width:120}
+                ,{field: 'orderType', title: '分类',width:120,templet: function (data) {
+                        if (data.orderType == 0) {
+                            return "产品销售";
+                        }
+                        if (data.orderType == 1) {
+                            return "服务";
+                        }
+                    }
+                }
                 ,{field: 'orderTotalSum', title: '不含税总额',width:120}
                 ,{field: 'orderGrossProfit', title: '毛利润',width:120}
                 ,{field: 'orderRevenue', title: '税额',width:120}
                 ,{field: 'orderSaleroom', title: '销售额',width:120}
                 ,{field: 'orderAmountRemitted', title: '已收款金额',width:120}
                 ,{field: 'orderInvoiceAmount', title: '已开票金额',width:120}
-                ,{field: 'orderApprovalStatus', title: '审批状态',width:120}
+                ,{field: 'orderApprovalStatus', title: '审批状态',width:120,templet: function (data) {
+                        if (data.orderApprovalStatus == 0) {
+                            return "审批中";
+                        }
+                        if (data.orderApprovalStatus == 1) {
+                            return "未启动";
+                        }
+                        if (data.orderApprovalStatus == 2) {
+                            return "以完成";
+                        }
+                        return "";
+                    }}
                 ,{field: 'orderApprovalTime', title: '审批时间',width:120}
-                ,{field: 'orderApprovalResult', title: '审批结果',width:120}
+                ,{field: 'orderApprovalResult', title: '审批结果',width:120,templet: function (data) {
+                        if (data.orderApprovalResult == 0) {
+                            return "成功结束";
+                        }
+                        if (data.orderApprovalResult == 1) {
+                            return "失败结束";
+                        }
+                        return "无";
+                    }}
             ]
             ]
         });
 
         //头工具栏事件
         table.on('toolbar(test)', function(obj){
-            var checkStatus = table.checkStatus(obj.config.id);
+            var checkStatus = table.checkStatus(obj.config.id)
+                , data = checkStatus.data; //获取选中的数据
             switch(obj.event){
                 case 'addOrder':
                     layer.open({
@@ -93,9 +117,29 @@
                         }
                     });
                     break;
-                case 'getCheckLength':
-                    var data = checkStatus.data;
-                    layer.msg('选中了：'+ data.length + ' 个');
+                case 'updateOrder':
+                    if (data.length === 0) {
+                        layer.msg('请选择一行');
+                    } else if (data.length > 1) {
+                        layer.msg('只能同时编辑一个');
+                    } else {
+                        var orderId=data[0].orderId;
+                        layer.open({
+                            title: '修改订单',
+                            type: 2,
+                            area: ['1000px', '450px'],
+                            content: 'update_order.html?orderId=' + orderId + ''
+                            , btn: ['保存','取消']
+                            , btnAlign: 'c'
+                            , yes: function (index, layero) {
+                                var body = layer.getChildFrame('body', index);
+                                body.find('#btnUpdateOrdre').click();
+                            }
+                            ,btn2: function(index, layero){
+                                layer.close(index);
+                            }
+                        });
+                    }
                     break;
                 case 'isAll':
                     layer.msg(checkStatus.isAll ? '全选': '未全选');

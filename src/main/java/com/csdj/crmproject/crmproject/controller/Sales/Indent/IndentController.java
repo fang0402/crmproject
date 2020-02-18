@@ -5,6 +5,7 @@ import com.csdj.crmproject.crmproject.entity.salesmanagement.Order;
 import com.csdj.crmproject.crmproject.service.Sales.Indent.IndentService;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -17,6 +18,7 @@ import javax.annotation.Resource;
 public class IndentController {
     @Resource
     private IndentService indentService;
+    //跳转页面
     @RequestMapping("order_manage.html")
     public String OrderManage(){
         return "sales/Indent/order_manage";
@@ -24,6 +26,12 @@ public class IndentController {
     @RequestMapping("add_order.html")
     public String addOrderHtml(){
         return "sales/Indent/add_order";
+    }
+    @RequestMapping("update_order.html")
+    public String updateOrderHtml(long orderId, Model model){
+        Order order=indentService.findGetOrderId(orderId);
+        model.addAttribute("order",order);
+        return "sales/Indent/update_order";
     }
 
     /**
@@ -53,6 +61,12 @@ public class IndentController {
     @ResponseBody
     public int addOrder(Order order){
         int i=indentService.addOrder(order);
+        return i;
+    }
+    @RequestMapping("update_order_htmls")
+    @ResponseBody
+    public int updateOrder(Order order){
+        int i=indentService.updateOrder(order);
         return i;
     }
 }
