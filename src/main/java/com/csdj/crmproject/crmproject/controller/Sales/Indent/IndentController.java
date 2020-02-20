@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 订单管理Controller
  * @author 谭芝豪
@@ -68,5 +71,18 @@ public class IndentController {
     public int updateOrder(Order order){
         int i=indentService.updateOrder(order);
         return i;
+    }
+    @RequestMapping("delete_order.htmls")
+    @ResponseBody
+    public Object deleteOrder(int[] array){
+        int i = indentService.deleteOrder(array);
+        Map<String, Object> map = new HashMap<>();
+        if (i > 0) {
+            map.put("show", "success");
+        } else {
+            map.put("show", "fail");
+        }
+        return map;
+
     }
 }

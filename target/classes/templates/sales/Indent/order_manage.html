@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -14,7 +15,7 @@
     <div class="layui-btn-container layui-input-inline">
         <button class="layui-btn layui-btn-sm" lay-event="addOrder">添加</button>
         <button class="layui-btn layui-btn-sm" lay-event="updateOrder">编辑</button>
-        <button class="layui-btn layui-btn-sm" lay-event="isAll">删除</button>
+        <button class="layui-btn layui-btn-sm" lay-event="deleteOrder">删除</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">查看</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">发起流程</button>
         <button class="layui-btn layui-btn-sm" lay-event="isAll">流程审批</button>
@@ -25,10 +26,10 @@
 
     <div class="layui-input-inline">
         <select name="orderApprovalStatus" lay-filter="orderApprovalStatus">
-            <option value="0" selected="">所有人的订单(全部)</option>
-            <option value="1" selected="">所有人的订单(审批中)</option>
-            <option value="2" selected="">所有人的订单(以成功)</option>
-            <option value="3" selected="">所有人的订单(以失败)</option>
+            <option value="0" th:selected="${d.where.orderApprovalStatus}==0">所有人的订单(全部)</option>
+            <option value="1" th:selected="${d.where.orderApprovalStatus}==1">所有人的订单(审批中)</option>
+            <option value="2" th:selected="${d.where.orderApprovalStatus}==2">所有人的订单(以成功)</option>
+            <option value="3" th:selected="${d.where.orderApprovalStatus}==3">所有人的订单(以失败)</option>
         </select>
     </div>
 </script>
@@ -141,8 +142,34 @@
                         });
                     }
                     break;
-                case 'isAll':
-                    layer.msg(checkStatus.isAll ? '全选': '未全选');
+                case 'deleteOrder':
+                    if (data.length === 0) {
+                        layer.msg('请选择一行');
+                    } else {
+                        layer.confirm('确定要删除选中的行?', {icon: 3, title: '提示'}, function (index) {
+                            var data = checkStatus.data;
+                            var array = new Array();
+                            for (var i = 0; i < data.length; i++) {
+                                array[i] = data[i].orderId;
+                            }
+                            $.ajax({
+                                url: "delete_order.htmls",
+                                type: "get",
+                                data: {array: array},
+                                traditional: true,
+                                success: function (data) {
+                                    if (data.show == "success") {
+                                        layer.msg('删除成功', {icon: 1, time: 2000}, function () {
+                                            window.location.reload();
+                                        });
+                                    }
+                                },
+                                error:function () {
+                                    layer.msg('ajax执行错误',{icon:2,time:2000});
+                                }
+                            })
+                        });
+                    }
                     break;
 
                 //自定义头工具栏右侧图标 - 提示
@@ -165,6 +192,7 @@
                 }
                 //,height: 300
             });
+            alert({{d.where.orderApprovalStatus}})
         });
 
     });

@@ -46,4 +46,9 @@ public class IndentServiceImpl implements IndentService {
     public int updateOrder(Order order) {
         return indentDao.updateOrder(order);
     }
+
+    @Override
+    public int deleteOrder(int[] array) {
+        return indentDao.deleteOrder(array);
+    }
 }

@@ -41,4 +41,11 @@ public interface IndentDao {
      * @return
      */
     public int updateOrder(Order order);
+    /**
+     * 批量删除订单
+     *
+     * @param array
+     * @return
+     */
+    public int deleteOrder(int[] array);
 }
