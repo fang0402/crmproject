@@ -81,6 +81,9 @@ public class StatisticalResult {
     }
 
     public Double getSummation() {
+        if(summation==null){
+            return 0.0;
+        }
         return summation;
     }
 
