@@ -29,27 +29,52 @@ public class SalesmanInstrumentServiceImpl implements SalesmanInstrumentService 
     }
 
     @Override
-    public List<StatisticalResult> countSaleForecasting() {
-        return salesmanInstrumentDao.countSaleForecasting();
+    public StatisticalResult countSaleForecasting1(Integer userId) {
+        return salesmanInstrumentDao.countSaleForecasting1(userId);
     }
 
     @Override
-    public StatisticalResult countRetrospectiveMonth() {
-        return salesmanInstrumentDao.countRetrospectiveMonth();
+    public StatisticalResult countSaleForecasting2(Integer userId) {
+        return salesmanInstrumentDao.countSaleForecasting2(userId);
     }
 
     @Override
-    public StatisticalResult countRetrospectiveQuarter() {
-        return salesmanInstrumentDao.countRetrospectiveQuarter();
+    public StatisticalResult countSaleForecasting3(Integer userId) {
+        return salesmanInstrumentDao.countSaleForecasting3(userId);
     }
 
     @Override
-    public StatisticalResult countRetrospectiveYear() {
-        return salesmanInstrumentDao.countRetrospectiveYear();
+    public StatisticalResult countSaleForecasting4(Integer userId) {
+        return salesmanInstrumentDao.countSaleForecasting4(userId);
     }
 
     @Override
-    public CusSalesTarget reviewPerformancePlan() {
-        return salesmanInstrumentDao.reviewPerformancePlan();
+    public StatisticalResult countSaleForecasting5(Integer userId) {
+        return salesmanInstrumentDao.countSaleForecasting5(userId);
+    }
+
+    @Override
+    public StatisticalResult countSaleForecasting6(Integer userId) {
+        return salesmanInstrumentDao.countSaleForecasting6(userId);
+    }
+
+    @Override
+    public StatisticalResult countRetrospectiveMonth(Integer userId) {
+        return salesmanInstrumentDao.countRetrospectiveMonth(userId);
+    }
+
+    @Override
+    public StatisticalResult countRetrospectiveQuarter(Integer userId) {
+        return salesmanInstrumentDao.countRetrospectiveQuarter(userId);
+    }
+
+    @Override
+    public StatisticalResult countRetrospectiveYear(Integer userId) {
+        return salesmanInstrumentDao.countRetrospectiveYear(userId);
+    }
+
+    @Override
+    public CusSalesTarget reviewPerformancePlan(Integer userId) {
+        return salesmanInstrumentDao.reviewPerformancePlan(userId);
     }
 }
