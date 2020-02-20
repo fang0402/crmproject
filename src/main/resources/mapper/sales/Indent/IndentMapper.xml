@@ -39,8 +39,82 @@
         <result column="order_context" property="orderContext"></result>
         <result column="fkUserId" property="fk_user_id"></result>
     </resultMap>
-
+    <select id="orderCount" resultType="int">
+        SELECT COUNT(1) AS orderCount FROM `order`
+        <where>
+            <if test="orderApprovalStatus==1">
+                and order_approval_status=0
+            </if>
+            <if test="orderApprovalStatus==2">
+                and order_approval_result=0
+            </if>
+            <if test="orderApprovalStatus==3">
+                and order_approval_result=1
+            </if>
+        </where>
+    </select>
     <select id="findOrder" resultMap="orderMap">
         select * from `order`
+       <where>
+           <if test="orderApprovalStatus==1">
+               and order_approval_status=0
+           </if>
+           <if test="orderApprovalStatus==2">
+               and order_approval_result=0
+           </if>
+           <if test="orderApprovalStatus==3">
+               and order_approval_result=1
+           </if>
+       </where>
     </select>
+    <select id="findGetOrderId" resultMap="orderMap">
+        select * from `order` where order_id=#{orderId}
+    </select>
+    <insert id="addOrder" parameterType="Order">
+        INSERT INTO `order` (order_name,fk_cus_type_id,fk_cus_name,fk_object_type_id,fk_object_name,order_type,
+        fk_contacts_id,order_payment,order_start_time,order_end_time,order_consignee_name,order_consignee_phone,
+        order_consignee_email,order_consignee_address,order_transportation,order_settlement,order_context)
+        values (#{orderName},#{fkCusTypeId},#{fkCusName},#{fkObjectTypeId},
+        #{fkObjectName},#{orderType},#{fkContactsId},#{orderPayment},#{orderStartTime},#{orderEndTime},
+        #{orderConsigneeName},#{orderConsigneePhone},#{orderConsigneeEmail},#{orderConsigneeAddress},
+        #{orderTransportation},#{orderSettlement},#{orderContext})
+    </insert>
+    <update id="updateOrder" parameterType="Order">
+        update `order`
+        <trim prefix="set" suffixOverrides="," suffix="where order_id = #{orderId}">
+            <if test="orderName != null">order_name=#{orderName},</if>
+            <if test="fkCusTypeId != null">fk_cus_type_id=#{fkCusTypeId},</if>
+            <if test="fkCusName != null">fk_cus_name=#{fkCusName},</if>
+            <if test="fkObjectTypeId != null">fk_object_type_id=#{fkObjectTypeId},</if>
+            <if test="fkObjectName != null">fk_object_name=#{fkObjectName},</if>
+            <if test="orderType != null">order_type=#{orderType},</if>
+            <if test="orderTotalSum != null">order_total_sum=#{orderTotalSum},</if>
+            <if test="orderGrossProfit != null">order_gross_profit=#{orderGrossProfit},</if>
+            <if test="orderRevenue != null">order_revenue=#{orderRevenue},</if>
+            <if test="orderSaleroom != null">order_saleroom=#{orderSaleroom},</if>
+            <if test="fkContactsId != null">fk_contacts_id=#{fkContactsId},</if>
+            <if test="orderPayment != null">order_payment=#{orderPayment},</if>
+            <if test="orderStartTime != null and orderStartTime!=''">order_start_time=#{orderStartTime},</if>
+            <if test="orderEndTime != null and orderEndTime!=''">order_end_time=#{orderEndTime},</if>
+            <if test="orderConsigneeName != null">order_consignee_name=#{orderConsigneeName},</if>
+            <if test="orderConsigneePhone != null">order_consignee_phone=#{orderConsigneePhone},</if>
+            <if test="orderConsigneeEmail != null">order_consignee_email=#{orderConsigneeEmail},</if>
+            <if test="orderConsigneeAddress != null">order_consignee_address=#{orderConsigneeAddress},</if>
+            <if test="orderAmountRemitted != null">order_amount_remitted=#{orderAmountRemitted},</if>
+            <if test="orderInvoiceAmount != null">order_invoice_amount=#{orderInvoiceAmount},</if>
+            <if test="orderApprovalStatus != null">order_approval_status=#{orderApprovalStatus},</if>
+            <if test="orderApprovalTime != null and orderApprovalTime!=''">order_approval_time=#{orderApprovalTime},</if>
+            <if test="orderApprovalResult != null">order_approval_result=#{orderApprovalResult},</if>
+            <if test="orderTransportation != null">order_transportation=#{orderTransportation},</if>
+            <if test="orderSettlement != null">order_settlement=#{orderSettlement},</if>
+            <if test="orderContext != null">order_context=#{orderContext},</if>
+            gmt_modified=DATE_FORMAT(NOW(),'%Y-%m-%d %H:%m:%s'),
+        </trim>
+    </update>
+    <delete id="deleteOrder">
+        delete from `order` where order_id in
+        <foreach collection="array" item="array" open="(" separator="," close=")">
+            #{array}
+        </foreach>
+    </delete>
 </mapper>
